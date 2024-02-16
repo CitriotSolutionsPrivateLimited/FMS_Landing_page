@@ -1,10 +1,13 @@
 import React from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdPhoneInTalk, MdEmail } from "react-icons/md";
-import { Row, Col, Input, Button, Form } from "antd";
+import { Row, Col, Input, Button, Form, message } from "antd";
 import { contactBg } from "../images/constants";
 
 function ContactUs() {
+  const handleSend = () =>{
+    message.success('Our team will contact you soon, Thank You!');
+  }
   return (
     <div className="bg-[#081326] w-screen h-auto" id="contact">
       <Row justify="start">
@@ -20,22 +23,22 @@ function ContactUs() {
             Connect to us
           </p>
           <div className="flex-col md:my-14 sm:my-4 md:gap-12 sm:gap-3 flex">
-            <div className="flex gap-5   w-full ">
+            {/* <div className="flex gap-5   w-full ">
               <MdPhoneInTalk className="md:text-2xl sm:text-lg text-white"/>
               <p className="md:text-lg sm:text-xs text-white font-thin">
               (+1) 510-945-8169
               </p>
-            </div>
+            </div> */}
             <div className="flex gap-5   w-full ">
               <MdEmail className="md:text-2xl sm:text-lg text-white"/>
               <p className=" md:text-lg sm:text-xs text-white font-thin">
-              info@mail.com
+              info@vizonai.com
               </p>
             </div>
             <div className="flex gap-5 w-2/3 ">
               <HiLocationMarker className="md:text-5xl sm:text-4xl text-white" />
               <p className=" md:text-lg sm:text-xs text-white font-thin">
-              300 S Main Street, Suite 212 Holly Springs, NC 27540
+              #3, 2nd Floor, Clark Wood Road, Richards Town, Bangalore- 560005
               </p>
             </div>
           </div>
@@ -67,7 +70,7 @@ function ContactUs() {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="w-full md:h-14 sm:h-10 bg-[#8C68CD] md:text-xl sm:text-lg">
+              <Button type="primary" htmlType="submit" onClick={handleSend} className="w-full md:h-14 sm:h-10 bg-[#8C68CD] md:text-xl sm:text-lg">
                 Send
               </Button>
             </Form.Item>
@@ -81,22 +84,22 @@ function ContactUs() {
       <div className="flex flex-col md:flex-row text-white md:pl-20 md:pb-20 md:pr-20 sm:pl-6 sm:pr-0">
         <div className="flex-col md:gap-5 sm:gap-4 flex md:w-1/2 sm:w-3/4">
           <h2 className="md:text-xl sm:lg mb-4 font-thin">Reach us</h2>
-            <div className="flex gap-5 w-full ">
+            {/* <div className="flex gap-5 w-full ">
               <MdPhoneInTalk className="text-xl text-white"/>
               <p className=" text-white font-thin sm:text-sm md:text-base">
               (+1) 510-945-8169
               </p>
-            </div>
+            </div> */}
             <div className="flex gap-5   w-full ">
               <MdEmail className="text-xl text-white"/>
               <p className=" text-white font-thin sm:text-sm md:text-base">
-              info@mail.com
+              info@vizonai.com
               </p>
             </div>
             <div className="flex gap-5 w-full ">
               <HiLocationMarker className="text-3xl text-white" />
               <p className="  text-white font-thin sm:text-sm md:text-base">
-              300 S Main Street, Suite 212 Holly Springs, NC 27540
+              #3, 2nd Floor, Clark Wood Road, Richards Town, Bangalore- 560005
               </p>
             </div>
         </div>
