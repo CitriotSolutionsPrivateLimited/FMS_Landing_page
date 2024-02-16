@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 767px) {
+  .container {
+    width: 100%; /* Adjust width as needed */
+    height: 10rem; /* Adjust height as needed */
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px 2px 5px -5px rgba(255, 255, 255, 0.8),
+                inset 0px 40.1213px 20.3445px rgba(96, 68, 145, 0.2),
+                inset 0px -20.4377px 12.9772px rgba(202, 172, 255, 0.15),
+                inset 0px 3.07909px 13.8559px rgba(154, 146, 210, 0.3),
+                inset 0px 0.769772px 30.7909px rgba(227, 222, 255, 0.2);
+    backdrop-filter: blur(38.4886px);
+  }
+}
+
+@media (min-width: 768px){
+  .container {
+    width: 370px;
+    height: 350px;
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px 8px 15px -5px rgba(255, 255, 255, 0.8),
+                inset 0px 80.1213px 30.3445px rgba(96, 68, 145, 0.2),
+                inset 0px -30.4377px 22.9772px rgba(202, 172, 255, 0.15),
+                inset 0px 3.07909px 13.8559px rgba(154, 146, 210, 0.3),
+                inset 0px 0.769772px 30.7909px rgba(227, 222, 255, 0.2);
+    backdrop-filter: blur(38.4886px);
+  }
+}
+
+.cardie {
+  border-radius: 50%;
+  background:  linear-gradient(180deg, rgba(111,66,193,1) 0%, rgba(104,67,236,0.4) 100%);
+  backdrop-filter: blur(38.4886px);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 767px) {
+  .cardie {
+    width: 2.5rem;
+    height: 2.5rem
+  }
+}
+
+@media (min-width: 768px){
+  .cardie {
+    width: 7rem;
+    height: 7rem
+  }
+}
