@@ -3,6 +3,7 @@ import Header from "./header";
 import Hero from "./hero";
 import Solution from './solution';
 import ContactUs from './contact';
+import ABoutUS from './about';
 
 function Mainpage() {
   return (
@@ -10,6 +11,7 @@ function Mainpage() {
     <Header />
     <Hero />
     <Solution />
+    <ABoutUS />
     <ContactUs />
     <div className=' flex justify-center items-center my-2'>
       <h1>

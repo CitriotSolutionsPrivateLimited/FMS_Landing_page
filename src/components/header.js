@@ -3,6 +3,8 @@ import "./header.css";
 import { chandra, logo } from "./constants";
 import Logo from "./logo";
 import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
+
 function Header() {
 	const isMobile = window.innerWidth <= 667; 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,6 +47,7 @@ function Header() {
     };
   }, []);
 
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -99,7 +102,7 @@ function Header() {
 			</div>
 		</div>
 		<ul
-			className={`pt-10 pb-4 w-2/5 mr-4 ${isMenuOpen ? "block" : "hidden"} bg-white text-black absolute right-0`}
+			className={`pt-2 pb-4 w-2/5 mr-4 ${isMenuOpen ? "block" : "hidden"} bg-white text-black absolute right-0`}
 		>
 			<li className="absolute top-0 right-0 m-2 md:hidden cursor-pointer" onClick={toggleMenu}>
 				<svg
@@ -137,13 +140,13 @@ function Header() {
               activeSection === "contact" ? " text-[#9C81CC]" : "text-[#E0E1E2]"
             }`}>Contact Us</a>
 			</li>
-			<li className="my-4">
-				<Button className="bg-[#8C68CD] border-0 rounded-lg h-8 w-20 text-white text-base font-Lato font-medium tracking-wide">
+			<li className="my-2">
+				<Button onClick={()=>navigate('/login')} className="bg-[#8C68CD] border-0 rounded-lg h-8 w-20 text-white text-base font-Lato font-medium tracking-wide">
 					Login
 				</Button>
 			</li>
 			<li className="my-2">
-				<Button className="bg-transparent border-[#8C68CD] mx-4 rounded-lg h-8 w-20 text-[#8C68CD] text-base font-Lato font-medium tracking-wide">
+				<Button onClick={()=>navigate('/login')} className="bg-transparent border-[#8C68CD] mx-4 rounded-lg h-8 w-20 text-[#8C68CD] text-base font-Lato font-medium tracking-wide">
 					Sign up
 				</Button>
 			</li>

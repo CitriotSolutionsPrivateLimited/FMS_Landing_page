@@ -72,7 +72,7 @@ function Solution() {
             </h3>
           </div>
 
-          <div className="lgl:mx-10 xs:mx-4 grid grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-10 mt-10">
+          <div className="lgl:mx-10 xs:mx-2 grid grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-10 mt-10">
             {featuresData.map((item) => (
               <Cardie img={item.icon} tp={item.title} desc={item.des} key={item.id} />
             ))}
@@ -129,7 +129,7 @@ function Solution() {
                 </div>
                 <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2">Data Feed from existing cameras are shared with the interceptor</div>
               </div>
-              <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 sm:ml-28 sm:mt-10 md:ml-6 md:mt-0" />
+              <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 xs:ml-20 sm:ml-28 sm:mt-10 md:ml-6 md:mt-0" />
 
               <div className="flex items-center flex-col">
                 <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b from-[#6F42C1] to-indigo-700 rounded-full flex justify-center items-center">
@@ -137,7 +137,7 @@ function Solution() {
                 </div>
                 <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2">VizonAi engine continuously monitors and crunches the data</div>
               </div>
-              <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 sm:ml-28 sm:mt-10 md:ml-0 md:mt-0" />
+              <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 xs:ml-20 sm:ml-28 sm:mt-10 md:ml-0 md:mt-0" />
 
 
               <div className="flex items-center flex-col md:mr-12">

@@ -6,9 +6,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SliderWrapper from "./slider";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
 	const isMobile = window.innerWidth <= 667;
+	const navigate = useNavigate();
 	
 	const settings = {
     dots: true,
@@ -75,10 +77,10 @@ function Hero() {
 					needs and budget.
 				</p>
 				<div className=" my-8">
-					<Button className="bg-[#C5B3E6] border-0 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide">
+					<Button className="bg-[#C5B3E6] border-0 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide" onClick={()=>navigate('/login')}>
 						Login
 					</Button>
-					<Button className="bg-transparent border-white mx-4 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide">
+					<Button className="bg-transparent border-white mx-4 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide" onClick={()=>navigate('/login')}>
 					Sign up
 					</Button>
 				</div>
