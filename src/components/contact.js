@@ -83,7 +83,7 @@ function ContactUs() {
      
       <div className="flex flex-col md:flex-row text-white md:pl-20 md:pb-20 md:pr-20 sm:pl-6 sm:pr-0">
         <div className="flex-col md:gap-5 sm:gap-4 flex md:w-1/2 sm:w-3/4">
-          <h2 className="md:text-xl sm:lg mb-4 font-thin">Reach us</h2>
+          <h2 className="md:text-xl sm:lg mb-4 font-thin font-Lato">Reach us</h2>
             {/* <div className="flex gap-5 w-full ">
               <MdPhoneInTalk className="text-xl text-white"/>
               <p className=" text-white font-thin sm:text-sm md:text-base">
@@ -92,13 +92,13 @@ function ContactUs() {
             </div> */}
             <div className="flex gap-5   w-full ">
               <MdEmail className="text-xl text-white"/>
-              <p className=" text-white font-thin sm:text-sm md:text-base">
+              <p className=" text-white font-thin sm:text-sm md:text-base font-Lato">
               info@vizonai.com
               </p>
             </div>
             <div className="flex gap-5 w-full ">
               <HiLocationMarker className="text-3xl text-white" />
-              <p className="  text-white font-thin sm:text-sm md:text-base">
+              <p className="  text-white font-thin sm:text-sm md:text-base font-Lato">
               #3, 2nd Floor, Clark Wood Road, Richards Town, Bangalore- 560005
               </p>
             </div>
@@ -107,30 +107,30 @@ function ContactUs() {
         <div className="flex md:gap-20 lg:gap-36 sm:gap-32 flex-row w-4/5 sm:mt-11 md:mt-0 md:ml-10">
 
           <div className="flex-col md:gap-5 sm:gap-3 flex w-1/4 ">
-            <h2 className="md:text-xl sm:lg md:mb-4 sm:mb-1 font-thin">Company</h2>
-            <p className="text-white font-thin sm:text-sm md:text-base">About</p>
-            <p className="text-white font-thin sm:text-sm md:text-base">Contact</p>
-            <p className="text-white font-thin sm:text-sm md:text-base">Blogs</p>
+            <h2 className="md:text-xl sm:lg md:mb-4 sm:mb-1 font-thin font-Lato">Company</h2>
+            <p className="text-white font-thin sm:text-sm md:text-base font-Lato">About</p>
+            <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Contact</p>
+            <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Blogs</p>
           </div>
 
           <div className="flex-col md:gap-5 sm:gap-3 flex w-2/3 md:mr-8">
-            <h2 className="md:text-xl sm:lg  md:mb-4 sm:mb-1 font-thin">Legal</h2>
-            <p className=" text-white font-thin sm:text-sm md:text-base">Privacy Policy</p>
-            <p className="text-white font-thin sm:text-sm md:text-base">Terms & Services</p>
-            <p className="text-white font-thin sm:text-sm md:text-base">Terms of Use</p>
-            <p className="text-white font-thin sm:text-sm md:text-base">Refund Policy</p>
+            <h2 className="md:text-xl sm:lg  md:mb-4 sm:mb-1 font-thin font-Lato">Legal</h2>
+            <p className=" text-white font-thin sm:text-sm md:text-base font-Lato">Privacy Policy</p>
+            <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Terms & Services</p>
+            <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Terms of Use</p>
+            <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Refund Policy</p>
           </div>
         </div>
         
         <div className="flex-col gap-5 flex lg:w-1/4 bg-[#03071C] rounded-2xl p-3 mr-10 md:mt-0 sm:mt-7 md:mb-0 sm:mb-8">
-          <h2 className="md:text-xl sm:text-lg mb-3 font-light">Join Our Newsletter</h2>
+          <h2 className="md:text-xl sm:text-lg mb-3 font-light font-Lato">Join Our Newsletter</h2>
           <div class="flex">
             <input type="email" placeholder="Your email address" class="md:w-48  px-3 py-2 bg-[#0B0F26]" />
             <button class="bg-[#0B0F26] text-white px-4 py-2 rounded-r-md">
               Subscribe
             </button>
           </div>
-          <p className="mb-2 text-[#616161]">*  Will send you weekly updates for your better tool management.</p>
+          <p className="mb-2 text-[#616161] font-Lato">*  Will send you weekly updates for your better tool management.</p>
         </div>
       </div>
     </div>
