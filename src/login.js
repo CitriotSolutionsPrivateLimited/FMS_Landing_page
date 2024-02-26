@@ -84,7 +84,7 @@ function Login() {
                   name="username"
                   rules={[{ required: true, message: 'Please enter your username' }]}
                 >
-                  <Input placeholder="Enter Your User Name" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400" onChange={(e) => setUsername(e.target.value)} />
+                  <Input placeholder="Enter Your User Name" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]" onChange={(e) => setUsername(e.target.value)} />
                 </Form.Item>
 
 
@@ -95,7 +95,7 @@ function Login() {
                 >
                   <Input.Password
                     placeholder="Enter Your Password"
-                    className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400"
+                    className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]"
                     onChange={(e) => setPassword(e.target.value)}
                     iconRender={visible => (visible ? <TbEyeCheck onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color: 'gray' }} /> : <RiEyeCloseLine onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color: 'gray' }} />)} />
                 </Form.Item>

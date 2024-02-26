@@ -86,3 +86,14 @@
     height: 7rem
   }
 }
+
+.custom-radio .ant-radio-inner {
+  border-color: #6F42C1 !important; /* Circle border color */
+}
+
+.custom-radio .ant-radio-inner::after {
+  background: #6F42C1;
+  background-color: #6F42C1 !important; /* Circle fill color */
+}
+
+

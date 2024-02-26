@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import { chandra, logo } from "./constants";
+import { loginLogo } from "../images/constants";
 import Logo from "./logo";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +10,7 @@ function Header() {
 	const isMobile = window.innerWidth <= 667; 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [activeSection, setActiveSection] = useState("overview");
-
+	const [currentPage, setCurrentPage] = useState("overview")
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -21,6 +22,7 @@ function Header() {
         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
+		setCurrentPage(id)
 	};
 
 	useEffect(() => {
@@ -51,35 +53,42 @@ function Header() {
 
 	return (
 		<>
-		{!isMobile ? <header className="header bg-[#9C81CC]">
+		{!isMobile ? <header className="header bg-white sticky top-0 z-50">
 			<nav className="navigation">
-				<img src={chandra} className=" bg-contain absolute w-96 h-96" alt="" />
 				<a
 					href="#"
 					className="logo absolute z-10">
 					<img
-						src={logo}
+						src={loginLogo}
 						alt="VIZONAI"
-						style={{ width: "50%", height: "auto",  }}
+						style={{ width: "100%", height: "auto",  }}
 					/>
 				</a>
-				<ul className="nav-links ml-60">
+				<ul className="flex mt-7 ml-72">
 					<li>
-						<a href="#overview" onClick={() => scrollToSection("overview")} className="font-Lato">Overview</a>
+						<a href="#overview" onClick={() => scrollToSection("overview")} className={`font-Lato text-lg mr-8 ${
+              currentPage === "overview" ? "text-[#6F42C1]" : 'text-[#818586]'}` }> Overview</a>
 					</li>
 					<li>
-						<a href="#problems" onClick={() => scrollToSection("problems")} className="font-Lato">Problems</a>
+						<a href="#problems" onClick={() => scrollToSection("problems")} className={`font-Lato text-lg mr-8 ${
+              currentPage === "problems" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>Problems</a>
 					</li>
 					<li>
-						<a href="#solution" onClick={() => scrollToSection("solution")} className="font-Lato">Solution</a>
+						<a href="#solution" onClick={() => scrollToSection("solution")} className={`font-Lato text-lg mr-8 ${
+              currentPage === "solution" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>Solution</a>
 					</li>
 					<li>
-						<a href="#contact" onClick={() => scrollToSection("contact")} className="font-Lato">Contact Us</a>
+						<a href="#about" onClick={() => scrollToSection("about")} className={`font-Lato text-lg mr-8 ${
+              currentPage === "about" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>about Us</a>
+					</li>
+					<li>
+						<a href="#contact" onClick={() => scrollToSection("contact")} className={`font-Lato text-lg mr-8 ${
+              currentPage === "contact" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>Contact Us</a>
 					</li>
 				</ul>
 			</nav>
 		</header> : 
-		<header className="header md:bg-[#9C81CC]">
+		<header className="header">
 		<nav className="relative ">
 		<div className="flex items-center justify-between p-4 md:p-6">
 			<img src={chandra} className="hidden md:block bg-contain w-24 h-24" alt="" />
@@ -134,6 +143,11 @@ function Header() {
 				<a href="#solution" onClick={() => scrollToSection("solution")} className={`font-Lato font-bold text-xl ${
               activeSection === "solution" ? "text-[#9C81CC]" : "text-[#E0E1E2]"
             }`}>Solution</a>
+			</li>
+			<li className="my-2">
+				<a href="#about" onClick={() => scrollToSection("about")} className={`font-Lato font-bold text-xl ${
+              activeSection === "about" ? " text-[#9C81CC]" : "text-[#E0E1E2]"
+            }`}>Contact Us</a>
 			</li>
 			<li className="my-2">
 				<a href="#contact" onClick={() => scrollToSection("contact")} className={`font-Lato font-bold text-xl ${

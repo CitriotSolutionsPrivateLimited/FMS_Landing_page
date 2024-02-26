@@ -12,20 +12,20 @@ function ContactUs() {
     <div className="bg-[#081326] w-screen h-auto" id="contact">
       <Row justify="start">
         <Col span={24}>
-          <h1 className="text-3xl  md:pl-24 sm:pl-8 md:pb-10 sm:pb-7 text-white font-light pt-10">Contact Us</h1>
+          <h1 className="text-3xl  md:pl-24 sm:pl-8 md:pb-10 sm:pb-7 text-white font-light pt-10 font-Lato">Contact Us</h1>
         </Col>
       </Row>
       <Row justify="space-around" align="middle" className="bg-white md:mx-20 sm:mx-5 md:flex-row flex-col sm:columns-1      md:columns-2  rounded-3xl">
 
         <Col className="bg-[#03071C] flex-col rounded-2xl md:pt-10 sm:p-6 md:pl-10 pb-20 w-1/2 lg:pb-80 sm:w-11/12 lg:w-2/5  sm:my-4 lg:mx-16 lg:my-12">
-          <h1 className="md:text-4xl sm:text-xl text-white font-light ">Contact Information</h1>
-          <p className="text-white md:text-2xl sm:text-base md:my-5 sm:my-2 font-thin">
+          <h1 className="md:text-4xl sm:text-xl text-white font-light font-Lato ">Contact Information</h1>
+          <p className="text-white md:text-2xl sm:text-base md:my-5 sm:my-2 font-thin font-Lato">
             Connect to us
           </p>
           <div className="flex-col md:my-14 sm:my-4 md:gap-12 sm:gap-3 flex">
             {/* <div className="flex gap-5   w-full ">
               <MdPhoneInTalk className="md:text-2xl sm:text-lg text-white"/>
-              <p className="md:text-lg sm:text-xs text-white font-thin">
+              <p className="md:text-lg sm:text-xs text-white font-thin font-Lato">
               (+1) 510-945-8169
               </p>
             </div> */}
@@ -49,28 +49,28 @@ function ContactUs() {
         {/* Contact form */}
         <Col className=" lg:p-12 rounded-lg  lg:w-2/5 md:p-10 w-1/2 md:pl-2 sm:w-11/12 ">
           <Form layout="vertical">
-            <label className="block md:text-2xl mb-2" htmlFor="full_name">Full Name</label>
+            <label className="block md:text-2xl mb-2 font-Lato" htmlFor="full_name">Full Name</label>
             <Form.Item name="full_name" >
-              <Input placeholder="Enter Your Full Name" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-4"/>
+              <Input placeholder="Enter Your Full Name" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-4 hover:border-[#8C68CD]"/>
             </Form.Item>
 
-            <label className="block md:text-2xl mb-2" htmlFor="full_name">Email</label>
+            <label className="block md:text-2xl mb-2 font-Lato" htmlFor="full_name">Email</label>
             <Form.Item name="email">
-              <Input type="email" placeholder="Email" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-4"/>
+              <Input type="email" placeholder="Email" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-4 hover:border-[#8C68CD]"/>
             </Form.Item>
 
-            <label className="block md:text-2xl mb-2" htmlFor="full_name">Mobile Number</label>
+            <label className="block md:text-2xl mb-2 font-Lato" htmlFor="full_name">Mobile Number</label>
             <Form.Item name="number">
-              <Input placeholder="+91" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-4"/>
+              <Input placeholder="+91" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-4 hover:border-[#8C68CD]"/>
             </Form.Item>
 
-            <label className="block md:text-2xl mb-2" htmlFor="full_name">Message</label>
+            <label className="block md:text-2xl mb-2 font-Lato" htmlFor="full_name">Message</label>
             <Form.Item name="message">
-              <Input.TextArea rows={5} placeholder="Your message" className="md:text-lg sm:text-sm mb-4"/>
+              <Input.TextArea rows={5} placeholder="Your message" className="md:text-lg sm:text-sm mb-4 hover:border-[#8C68CD]"/>
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" onClick={handleSend} className="w-full md:h-14 sm:h-10 bg-[#8C68CD] md:text-xl sm:text-lg">
+              <Button type="primary" htmlType="submit" onClick={handleSend} className="w-full md:h-14 sm:h-10 md:text-2xl sm:text-lg font-Lato" style={{backgroundColor:'#8C68CD'}}>
                 Send
               </Button>
             </Form.Item>

@@ -171,7 +171,7 @@ const MultiStepForm = () => {
                rules={[{ required: true, message: 'Please enter your full name' }]}>
                <Input 
                   placeholder="Enter Your Full Name" 
-                  className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400" 
+                  className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]" 
                   onChange={(e) => setFullname(e.target.value)} 
                 />
    
@@ -184,7 +184,7 @@ const MultiStepForm = () => {
                rules={[{ required: true, message: 'Please enter your User Name' }]}
              >
                <Input placeholder="Enter Your User Name" 
-               className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400" 
+               className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]" 
                onChange={(e) => setUsername(e.target.value)}/>
              </Form.Item>
    
@@ -213,7 +213,7 @@ const MultiStepForm = () => {
               className="mb-6"
               rules={[{ required: true, message: 'Please enter your designation' }]}
             >
-              <Radio.Group  value = {designation} onChange={(e) => setDesignation(e.target.value)}>
+              <Radio.Group  value = {designation} onChange={(e) => setDesignation(e.target.value)} className="custom-radio">
                 <Radio value="manager" className="text-lg font-light">Manager</Radio>
                 <Radio value="regionalManager" className="text-lg font-light">Regional Manager</Radio>
               </Radio.Group>
@@ -225,7 +225,7 @@ const MultiStepForm = () => {
               name="organisation" 
               rules={[{ required: true, message: 'Please enter your organisation name' }]}
               >
-              <Input placeholder="Enter Your Organisation Name" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400" onChange={(e) => setOrganisation(e.target.value)} />
+              <Input placeholder="Enter Your Organisation Name" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]" onChange={(e) => setOrganisation(e.target.value)} />
             </Form.Item>
             
 
@@ -234,7 +234,7 @@ const MultiStepForm = () => {
               name="email"
               rules={[{ required: true, message: 'Please enter your Work Mail' }]}
             >
-              <Input placeholder="Enter Your Work Mail" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400" onChange={(e) => setEmail(e.target.value)}/>
+              <Input placeholder="Enter Your Work Mail" className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]" onChange={(e) => setEmail(e.target.value)}/>
             </Form.Item>
 
             <div className="flex justify-between -mb-9">
@@ -281,7 +281,7 @@ const MultiStepForm = () => {
               
               <Input.Password 
               placeholder="Enter Your Password" 
-              className="md:text-lg sm:text-sm sm:h-12 md:h-16 border-slate-400" 
+              className="md:text-lg sm:text-sm sm:h-12 md:h-16 border-slate-400 hover:border-[#8C68CD]" 
               onChange={handlePasswordChange}
               iconRender={visible => (visible ? <TbEyeCheck onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color:'gray' }} /> : <RiEyeCloseLine onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color:'gray' }}/>)}/>
               
@@ -302,7 +302,7 @@ const MultiStepForm = () => {
             <Form.Item 
               name="confirmPassword" 
               rules={[{ required: true, message: 'Please enter your password' }]}>
-              <Input  className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400" onChange={(e) => setConfirmPassword(e.target.value)} />
+              <Input  className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]" onChange={(e) => setConfirmPassword(e.target.value)} />
             </Form.Item>
 
             <div className="flex justify-between -mb-9">

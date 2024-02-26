@@ -87,64 +87,64 @@ function Solution() {
           </Row>
           <Row justify="space-around" className="flex-row md:p-8">
             <Col className=" md:flex-col md:w-2/5 md:p-7 md:gap-5">
-              <h1 className="md:text-4xl lg:text-5xl sm:text-2xl text-white font-semibold leading-tight">Redefine the way you Monitor with Vizon AI</h1>
-              <p className="text-white md:text-2xl sm:text-lg my-5 font-thin leading-relaxed">
+              <h1 className="md:text-4xl lg:text-5xl sm:text-2xl text-white font-semibold leading-tight font-Lato">Redefine the way you Monitor with Vizon AI</h1>
+              <p className="text-white md:text-2xl sm:text-lg my-5 font-thin leading-relaxed font-Lato">
                 Our purpose is to deliver excellence in service and execution
               </p>
             </Col>
             <Col className=" flex-col md:w-3/5 md:p-7 ">
               <div className="flex items-center">
                 <FaRegArrowAltCircleRight className="text-xl text-white mr-3" />
-                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin">Unified dashboard for seamless oversight across all locations</p>
+                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin font-Lato">Unified dashboard for seamless oversight across all locations</p>
               </div>
 
               <div className="flex items-center">
                 <FaRegArrowAltCircleRight className="text-xl text-white mr-3" />
-                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin">Continuous monitoring and real-time data analysis for proactive insights</p>
+                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin font-Lato">Continuous monitoring and real-time data analysis for proactive insights</p>
               </div>
 
               <div className="flex items-center">
                 <FaRegArrowAltCircleRight className="text-xl text-white mr-3" />
-                <p className="text-white md:text-xl sm:text-sm nd:my-4 sm:my-2 font-thin">Robust system for uninterrupted data gathering to enhance
+                <p className="text-white md:text-xl sm:text-sm nd:my-4 sm:my-2 font-thin font-Lato">Robust system for uninterrupted data gathering to enhance
                   situational awareness</p>
               </div>
 
               <div className="flex items-center">
                 <FaRegArrowAltCircleRight className="text-xl text-white mr-3" />
-                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin">Enhanced monitoring capabilities for detailed insights, improving
+                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin font-Lato">Enhanced monitoring capabilities for detailed insights, improving
                   employee assessments</p>
               </div>
 
               <div className="flex items-center">
                 <FaRegArrowAltCircleRight className="text-xl text-white mr-3" />
-                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin">Intelligent analytics for actionable recommendations in operational improvements</p>
+                <p className="text-white md:text-xl sm:text-sm md:my-4 sm:my-2 font-thin font-Lato">Intelligent analytics for actionable recommendations in operational improvements</p>
               </div>
             </Col>
           </Row>
           <div className="md:flex md:flex-col items-center md:justify-center p-10">
             <div className="md:grid grid-cols-5  items-center md:mb-8 pb-0">
               <div className="flex items-center flex-col md:ml-20">
-                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b from-[#6F42C1] to-indigo-700 rounded-full flex justify-center items-center">
+                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b  rounded-full flex justify-center items-center cardie">
                   <img src={cctv} alt="CCTV Icon" className="w-16 h-16" />
                 </div>
-                <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2">Data Feed from existing cameras are shared with the interceptor</div>
+                <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2 font-Lato">Data Feed from existing cameras are shared with the interceptor</div>
               </div>
               <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 xs:ml-20 sm:ml-28 sm:mt-10 md:ml-6 md:mt-0" />
 
               <div className="flex items-center flex-col">
-                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b from-[#6F42C1] to-indigo-700 rounded-full flex justify-center items-center">
+                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 rounded-full flex justify-center items-center cardie">
                   <img src={laptop} alt="Laptop Icon" className="w-16 h-16" />
                 </div>
-                <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2">VizonAi engine continuously monitors and crunches the data</div>
+                <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2 font-Lato">VizonAi engine continuously monitors and crunches the data</div>
               </div>
               <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 xs:ml-20 sm:ml-28 sm:mt-10 md:ml-0 md:mt-0" />
 
 
               <div className="flex items-center flex-col md:mr-12">
-                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b from-[#6F42C1] to-indigo-700 rounded-full flex justify-center items-center">
+                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24  rounded-full flex justify-center items-center cardie">
                   <img src={graph} alt="Graph Icon" className="w-16 h-16" />
                 </div>
-                <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2">Data Feed from existing cameras are shared with the interceptor</div>
+                <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2 font-Lato">Data Feed from existing cameras are shared with the interceptor</div>
               </div>
             </div>
           </div>
