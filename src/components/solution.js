@@ -49,7 +49,7 @@ function Solution() {
   return (
     <>
       <div className="bg-[#081326] w-screen  h-auto md:p-16 sm:p-7" >
-        <div
+        <section
           id="problems"
           className='bg-[#06071B] rounded-3xl py-12 h-full bg-contain md:-mt-28 -mt-16 mb-10'
           style={{ 
@@ -78,8 +78,8 @@ function Solution() {
             ))}
           </div>
 
-        </div>
-        <div id="solution">
+        </section>
+        <section id="solution">
           <Row justify="start">
             <Col className="md:pl-16 md:pt-8 md:w-full md:h-full sm:w-32">
               <img src={frame} alt="frame" />
@@ -124,7 +124,7 @@ function Solution() {
           <div className="md:flex md:flex-col items-center md:justify-center p-10">
             <div className="md:grid grid-cols-5  items-center md:mb-8 pb-0">
               <div className="flex items-center flex-col md:ml-20">
-                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b  rounded-full flex justify-center items-center cardie">
+                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 bg-gradient-to-b  rounded-full flex justify-center items-center solution">
                   <img src={cctv} alt="CCTV Icon" className="w-16 h-16" />
                 </div>
                 <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2 font-Lato">Data Feed from existing cameras are shared with the interceptor</div>
@@ -132,7 +132,7 @@ function Solution() {
               <img src={line} alt="Line" className="md:w-32 h-8 lg:w-80 lg:h-5 ml-0 sm:h-2 sm:w-20 md:mb-20 sm:mb-10 sm:rotate-90 md:rotate-0 xs:ml-20 sm:ml-28 sm:mt-10 md:ml-6 md:mt-0" />
 
               <div className="flex items-center flex-col">
-                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 rounded-full flex justify-center items-center cardie">
+                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24 rounded-full flex justify-center items-center solution">
                   <img src={laptop} alt="Laptop Icon" className="w-16 h-16" />
                 </div>
                 <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2 font-Lato">VizonAi engine continuously monitors and crunches the data</div>
@@ -141,14 +141,14 @@ function Solution() {
 
 
               <div className="flex items-center flex-col md:mr-12">
-                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24  rounded-full flex justify-center items-center cardie">
+                <div className="md:w-28 md:h-28 sm:w-24 sm:h-24  rounded-full flex justify-center items-center solution">
                   <img src={graph} alt="Graph Icon" className="w-16 h-16" />
                 </div>
                 <div className="text-center text-white md:w-52  sm:w-80 md:text-lg sm:text-base font-light mt-2 font-Lato">Data Feed from existing cameras are shared with the interceptor</div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </>
 

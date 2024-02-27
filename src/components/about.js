@@ -4,7 +4,7 @@ import { img,img2, img3 } from "../images/constants";
 
 function AboutUs() {
   return (
-    <div className="bg-[#081326] w-screen h-auto " id="about">
+    <section className="bg-[#081326] w-screen h-auto " id="about">
       <Row justify="start">
         <Col span={24}>
           <h1 className="text-3xl  md:pl-24 sm:pl-8 lg:pb-10 sm:pb-7 text-white font-light pt-10 font-Lato">About Us</h1>
@@ -147,7 +147,7 @@ function AboutUs() {
           </div>
         </Col>
       </Row>
-    </div>
+    </section>
   );
 }
 

@@ -9,7 +9,7 @@ function ContactUs() {
     message.success('Our team will contact you soon, Thank You!');
   }
   return (
-    <div className="bg-[#081326] w-screen h-auto" id="contact">
+    <section className="bg-[#081326] w-screen h-auto" id="contact">
       <Row justify="start">
         <Col span={24}>
           <h1 className="text-3xl  md:pl-24 sm:pl-8 md:pb-10 sm:pb-7 text-white font-light pt-10 font-Lato">Contact Us</h1>
@@ -133,7 +133,7 @@ function ContactUs() {
           <p className="mb-2 text-[#616161] font-Lato">*  Will send you weekly updates for your better tool management.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

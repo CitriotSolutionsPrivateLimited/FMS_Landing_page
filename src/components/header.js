@@ -40,6 +40,7 @@ function Header() {
         }
       });
       setActiveSection(currentActive);
+			setCurrentPage(currentActive)
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -79,7 +80,7 @@ function Header() {
 					</li>
 					<li>
 						<a href="#about" onClick={() => scrollToSection("about")} className={`font-Lato text-lg mr-8 ${
-              currentPage === "about" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>about Us</a>
+              currentPage === "about" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>About Us</a>
 					</li>
 					<li>
 						<a href="#contact" onClick={() => scrollToSection("contact")} className={`font-Lato text-lg mr-8 ${

@@ -43,7 +43,7 @@ const featuresData = [
 ];
 function Problem() {
   return (
-    <div className='bg-[#081326] sm:p-8 md:p-12 lg:p-20' id='problems'>
+    <section className='bg-[#081326] sm:p-8 md:p-12 lg:p-20' id='problems'>
       <div
         className='bg-[#06071B] rounded-3xl py-12 h-full bg-contain'
         style={{ 
@@ -73,7 +73,7 @@ function Problem() {
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }
 
