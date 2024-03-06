@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Row, Col, Input, Button, Form, Checkbox } from "antd";
+import { Row, Col, Input, Button, Form, Checkbox, message } from "antd";
 import { loginLogo, login1, login2, login3, login4 } from "./images/constants";
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { TbEyeCheck } from "react-icons/tb";
@@ -23,7 +23,11 @@ function Login() {
   };
 
   const onFinish = (values) => {
-    console.log('Received values:', values);
+    if(values.username !== 'admin' || values.password !== '12345'){
+      return message.error('Invalid username or password')
+    }
+    message.success('Login Successfully')
+    navigate('/Userhome')
   };
 
   useEffect(() => {

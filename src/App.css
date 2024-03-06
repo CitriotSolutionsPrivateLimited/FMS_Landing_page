@@ -96,6 +96,11 @@
   background-color: #6F42C1 !important; /* Circle fill color */
 }
 
+.dashboard {
+  background:  linear-gradient(90deg, rgba(156, 129, 204, 1) 0%, rgba(111, 66, 193, 1) 100%);
+  backdrop-filter: blur(38.4886px);
+}
+
 .solution {
   border-radius: 50%;
   background:  linear-gradient(180deg, rgba(111,66,193,1) 0%, rgba(104,67,236,0.4) 100%);

@@ -68,23 +68,23 @@ function Header() {
 				<ul className="flex mt-7 ml-72">
 					<li>
 						<a href="#overview" onClick={() => scrollToSection("overview")} className={`font-Lato text-lg mr-8 ${
-              currentPage === "overview" ? "text-[#6F42C1]" : 'text-[#818586]'}` }> Overview</a>
+              currentPage === "overview" ? "text-[#6F42C1]" : 'text-[#818586]' } hover:border-b-2 hover:border-[#6F42C1]` }> Overview</a>
 					</li>
 					<li>
 						<a href="#problems" onClick={() => scrollToSection("problems")} className={`font-Lato text-lg mr-8 ${
-              currentPage === "problems" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>Problems</a>
+              currentPage === "problems" ? " text-[#6F42C1]" : 'text-[#818586]'} hover:border-b-2 hover:border-[#6F42C1]` }>Problems</a>
 					</li>
 					<li>
 						<a href="#solution" onClick={() => scrollToSection("solution")} className={`font-Lato text-lg mr-8 ${
-              currentPage === "solution" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>Solution</a>
+              currentPage === "solution" ? " text-[#6F42C1]" : 'text-[#818586]'} hover:border-b-2 hover:border-[#6F42C1]` }>Solution</a>
 					</li>
 					<li>
 						<a href="#about" onClick={() => scrollToSection("about")} className={`font-Lato text-lg mr-8 ${
-              currentPage === "about" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>About Us</a>
+              currentPage === "about" ? " text-[#6F42C1]" : 'text-[#818586]'} hover:border-b-2 hover:border-[#6F42C1]` }>About Us</a>
 					</li>
 					<li>
 						<a href="#contact" onClick={() => scrollToSection("contact")} className={`font-Lato text-lg mr-8 ${
-              currentPage === "contact" ? " text-[#6F42C1]" : 'text-[#818586]'}` }>Contact Us</a>
+              currentPage === "contact" ? " text-[#6F42C1]" : 'text-[#818586]'} hover:border-b-2 hover:border-[#6F42C1]` }>Contact Us</a>
 					</li>
 				</ul>
 			</nav>

@@ -83,7 +83,7 @@ function Hero() {
 					<button className="bg-[#C5B3E6] border-0 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide hover:bg-[#6F42C1] " onClick={()=>navigate('/login')}>
 						Login
 					</button>
-					<button className="bg-transparent border-white mx-4 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide " style={{ border: '1px solid white'}} onClick={()=>navigate('/login')}>
+					<button className="bg-transparent border-white mx-4 lg:h-14 rounded-lg lg:w-32 h-10 w-24 text-white lg:text-2xl text-xl font-Lato font-medium tracking-wide hover:bg-[#6F42C1] " style={{ border: '1px solid white'}} onClick={()=>navigate('/login')}>
 					Sign up
 					</button>
 				</div>

@@ -23,21 +23,21 @@ function ContactUs() {
             Connect to us
           </p>
           <div className="flex-col md:my-14 sm:my-4 md:gap-12 sm:gap-3 flex">
-            {/* <div className="flex gap-5   w-full ">
+            <div className="flex gap-5   w-full ">
               <MdPhoneInTalk className="md:text-2xl sm:text-lg text-white"/>
               <p className="md:text-lg sm:text-xs text-white font-thin font-Lato">
-              (+1) 510-945-8169
+              9731133551
               </p>
-            </div> */}
+            </div>
             <div className="flex gap-5   w-full ">
               <MdEmail className="md:text-2xl sm:text-lg text-white"/>
-              <p className=" md:text-lg sm:text-xs text-white font-thin">
+              <p className=" md:text-lg sm:text-xs text-white font-thin font-Lato">
               info@vizonai.com
               </p>
             </div>
             <div className="flex gap-5 w-2/3 ">
               <HiLocationMarker className="md:text-5xl sm:text-4xl text-white" />
-              <p className=" md:text-lg sm:text-xs text-white font-thin">
+              <p className=" md:text-lg sm:text-xs text-white font-thin font-Lato">
               #3, 2nd Floor, Clark Wood Road, Richards Town, Bangalore- 560005
               </p>
             </div>
@@ -81,15 +81,15 @@ function ContactUs() {
       <div className="md:border-b md:border-white md:mt-24 md:mb-10 md:ml-14 md:mr-14 sm:mt-9"></div>
 
      
-      <div className="flex flex-col md:flex-row text-white md:pl-20 md:pb-20 md:pr-20 sm:pl-6 sm:pr-0">
-        <div className="flex-col md:gap-5 sm:gap-4 flex md:w-1/2 sm:w-3/4">
+      <div className="flex flex-col md:flex-row text-white md:pl-20 md:pb-20 md:pr-20 sm:pl-6 sm:pr-0 ">
+        <div className="flex-col md:gap-5 sm:gap-4 flex lg:w-1/3 sm:w-3/4 lg:mr-32 md:w-1/2">
           <h2 className="md:text-xl sm:lg mb-4 font-thin font-Lato">Reach us</h2>
-            {/* <div className="flex gap-5 w-full ">
+            <div className="flex gap-5 w-full ">
               <MdPhoneInTalk className="text-xl text-white"/>
-              <p className=" text-white font-thin sm:text-sm md:text-base">
-              (+1) 510-945-8169
+              <p className=" text-white font-thin sm:text-sm md:text-base font-Lato">
+              9731133551
               </p>
-            </div> */}
+            </div>
             <div className="flex gap-5   w-full ">
               <MdEmail className="text-xl text-white"/>
               <p className=" text-white font-thin sm:text-sm md:text-base font-Lato">
@@ -104,7 +104,7 @@ function ContactUs() {
             </div>
         </div>
 
-        <div className="flex md:gap-20 lg:gap-36 sm:gap-32 flex-row w-4/5 sm:mt-11 md:mt-0 md:ml-10">
+        {/* <div className="flex md:gap-20 lg:gap-36 sm:gap-32 flex-row w-4/5 sm:mt-11 md:mt-0 md:ml-10">
 
           <div className="flex-col md:gap-5 sm:gap-3 flex w-1/4 ">
             <h2 className="md:text-xl sm:lg md:mb-4 sm:mb-1 font-thin font-Lato">Company</h2>
@@ -120,9 +120,9 @@ function ContactUs() {
             <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Terms of Use</p>
             <p className="text-white font-thin sm:text-sm md:text-base font-Lato">Refund Policy</p>
           </div>
-        </div>
+        </div> */}
         
-        <div className="flex-col gap-5 flex lg:w-1/4 bg-[#03071C] rounded-2xl p-3 mr-10 md:mt-0 sm:mt-7 md:mb-0 sm:mb-8">
+        <div className="flex-col gap-5 flex lg:w-1/4 bg-[#03071C] rounded-2xl p-3 mr-10 md:mt-0 sm:mt-7 md:mb-0 sm:mb-8 lg:ml-96 md:w-1/2 md:ml-40">
           <h2 className="md:text-xl sm:text-lg mb-3 font-light font-Lato">Join Our Newsletter</h2>
           <div class="flex">
             <input type="email" placeholder="Your email address" class="md:w-48  px-3 py-2 bg-[#0B0F26]" />
