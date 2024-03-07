@@ -41,7 +41,7 @@ function Sidebar() {
     }
 	},[])
   return (
-    <div className="bg-white h-screen p-12 flex flex-col sticky top-0" style={{width: '295px'}}>
+    <div className="bg-white h-screen p-12 flex flex-col sticky top-0" style={{width: '280px'}}>
       <ul className="flex flex-col flex-grow text-base font-Lato mt-20 gap-2">
         <li className={`p-4  flex items-center text-base ${activeSection === 'Dashboard' ? 'h-20 w-48 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
         onClick={() => setActiveSection('Dashboard')}>
@@ -51,7 +51,7 @@ function Sidebar() {
           </Link>
           {activeSection === 'Dashboard' && (
             <div className="flex items-center justify-center ">
-              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-60 items-center justify-center">
+              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-56 items-center justify-center">
               <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center">
               <TbChevronLeft color="#6F42C1" size={24} />
               </div>
@@ -69,7 +69,7 @@ function Sidebar() {
           {employeesView ? <HiChevronUp size={24} className={` ml-8 cursor-pointer ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} onClick={()=> setEmployeesView(false)}/> : <HiChevronDown size={24} className={` ml-8 cursor-pointer ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} onClick={()=> setEmployeesView(true)} /> }
           {activeSection === 'Employees' && (
             <div className="flex items-center justify-center ">
-              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-36 items-center justify-center">
+              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-32 items-center justify-center">
               <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center">
               <TbChevronLeft color="#6F42C1" size={24} />
               </div>
@@ -109,7 +109,7 @@ function Sidebar() {
           </Link>
           {activeSection === 'Customers' && (
             <div className="flex items-center justify-center ">
-              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-60 items-center justify-center">
+              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-56 items-center justify-center">
               <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center">
               <TbChevronLeft color="#6F42C1" size={24} />
               </div>

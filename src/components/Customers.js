@@ -78,7 +78,7 @@ function Customers() {
 
         <div className='flex flex-row border border-grey rounded-2xl p-5 items-center mt-4 gap-8'>
           { customersData.map((cmr) => (
-            <div className={`flex flex-col items-center justify-between ${customer === cmr.age ? 'bg-[#D3DAF0]' : 'bg-white '}  rounded-md p-2 hover:bg-[#D3DAF0]`} style={{width:'100px', height:'140px'}} onClick={()=>setCustomer(cmr.age)}>
+            <div className={`flex flex-col items-center justify-between ${customer === cmr.age ? 'bg-[#D3DAF0]' : 'bg-white hover:bg-[#F8F9FA]'}  rounded-md p-2`} style={{width:'100px', height:'140px'}} onClick={()=>setCustomer(cmr.age)}>
               <img src={cmr.img} className='w-20 h-20'/>
               
               <div className='bg-[#5470C6] text-white w-16 h-7 flex items-center justify-center rounded-md font-Lato text-sm mt-3 '>Age {cmr.age}</div>
@@ -188,7 +188,7 @@ function Customers() {
 
         </div>
 
-        <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5 p-3" style={{width:'520px', height:'630px', overflowY:'auto'}}>
+        <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5 p-3 " style={{width:'530px', height:'630px', overflowY:'auto'}}>
           <div className="flex flex-col  p-4 gap-4">
             <span className=" text-2xl font-Lato font-bold text-[#2D3436]">Age Demographic</span>
             <div className='flex flex-row'>
