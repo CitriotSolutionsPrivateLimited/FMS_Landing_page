@@ -82,7 +82,7 @@ const TeamMembers = () => {
  
 
   return (
-    <div className="flex flex-col w-max md:p-5 bg-white rounded-lg" style={{width:'500px', maxHeight:'350px', overflowY:'auto'}}>
+    <div className="flex flex-col md:p-5 bg-white rounded-lg ml-4" style={{width:'500px', maxHeight:'350px', overflowY:'auto'}}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex flex-col">
           <span className="text-[#2D3436] font-Lato text-base font-semibold">Team Members</span>

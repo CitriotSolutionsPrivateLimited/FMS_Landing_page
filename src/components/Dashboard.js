@@ -28,7 +28,7 @@ function Dashboard() {
             <div className="w-1 h-1  bg-[#8C68CD] rounded-full ml-2 mr-2"></div>
             <span className='text-[#8C68CD] text-sm'>Dashboard</span>
         </div>
-      <Row  className="flex-row mt-3  justify-between">
+      <Row  className="flex-row mt-3 ">
         <Col className="dashboard md:flex-row md:p-5 rounded-lg flex flex-row items-center justify-between" style={{width:'560px', height:'350px'}}>
           <div className='flex flex-col w-2/3'>
             <h1 className="md:text-4xl lg:text-3xl sm:text-xl text-white  leading-tight font-Lato"> Welcome,</h1>
