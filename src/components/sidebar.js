@@ -41,9 +41,9 @@ function Sidebar() {
     }
 	},[])
   return (
-    <div className="bg-white h-screen p-12 flex flex-col sticky top-0" style={{width: '250px'}}>
+    <div className="bg-white h-screen p-12 flex flex-col sticky top-0" style={{width: '295px'}}>
       <ul className="flex flex-col flex-grow text-base font-Lato mt-20 gap-2">
-        <li className={`p-4  flex items-center text-base ${activeSection === 'Dashboard' ? 'h-20 w-40 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
+        <li className={`p-4  flex items-center text-base ${activeSection === 'Dashboard' ? 'h-20 w-48 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
         onClick={() => setActiveSection('Dashboard')}>
           <Link to="/Userhome/dashboard" className="flex items-center">
             <TbChartPie size={24}  className={`mr-2 ${ activeSection === 'Dashboard' ? 'text-white' : 'text-[#AAADAE]' } `} />
@@ -51,7 +51,7 @@ function Sidebar() {
           </Link>
           {activeSection === 'Dashboard' && (
             <div className="flex items-center justify-center ">
-              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-40 items-center justify-center">
+              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-60 items-center justify-center">
               <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center">
               <TbChevronLeft color="#6F42C1" size={24} />
               </div>
@@ -60,16 +60,16 @@ function Sidebar() {
           )}
         </li>
 
-        <li className={`p-4 flex items-center text-base ${activeSection === 'Employees' ? 'h-20 w-40 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
+        <li className={`p-4 flex items-center text-base ${activeSection === 'Employees' ? 'h-20 w-48 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
         onClick={() => setActiveSection('Employees')}>
           <Link to="/Userhome/Employees/TeamMembers" className="flex items-center">
-            <TbBriefcase size={24}  className={`mr-1 ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} />
+            <TbBriefcase size={24}  className={`mr-2 ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} />
             Employees
           </Link>
-          {employeesView ? <HiChevronUp size={24} className={` ml-2 cursor-pointer ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} onClick={()=> setEmployeesView(false)}/> : <HiChevronDown size={24} className={` ml-2 cursor-pointer ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} onClick={()=> setEmployeesView(true)} /> }
+          {employeesView ? <HiChevronUp size={24} className={` ml-8 cursor-pointer ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} onClick={()=> setEmployeesView(false)}/> : <HiChevronDown size={24} className={` ml-8 cursor-pointer ${ activeSection === 'Employees' ? 'text-white' : 'text-[#AAADAE]' } `} onClick={()=> setEmployeesView(true)} /> }
           {activeSection === 'Employees' && (
             <div className="flex items-center justify-center ">
-              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-28 items-center justify-center">
+              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-36 items-center justify-center">
               <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center">
               <TbChevronLeft color="#6F42C1" size={24} />
               </div>
@@ -101,7 +101,7 @@ function Sidebar() {
 
 
 
-        <li className={`p-4  flex items-center text-base ${activeSection === 'Customers' ? 'h-20 w-40 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
+        <li className={`p-4  flex items-center text-base ${activeSection === 'Customers' ? 'h-20 w-48 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
         onClick={() => setActiveSection('Customers')}>
           <Link to="/Userhome/Customers" className="flex items-center">
             <TbUsersGroup size={24}  className={`mr-2 ${ activeSection === 'Customers' ? 'text-white' : 'text-[#AAADAE]' } `} />
@@ -109,7 +109,7 @@ function Sidebar() {
           </Link>
           {activeSection === 'Customers' && (
             <div className="flex items-center justify-center ">
-              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-40 items-center justify-center">
+              <div className="flex bg-[#F8F9FA] h-14 w-14 rounded-full -mr-60 items-center justify-center">
               <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center">
               <TbChevronLeft color="#6F42C1" size={24} />
               </div>
@@ -118,7 +118,7 @@ function Sidebar() {
           )}
         </li>
 
-        <li className={`p-4 flex items-center text-base ${activeSection === 'Reports' ? 'h-20 w-40 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
+        <li className={`p-4 flex items-center text-base ${activeSection === 'Reports' ? 'h-20 w-48 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `} style={{height:'50px'}}
         onClick={() => setActiveSection('Reports')}>
           <Link to="/dashboard" className="flex items-center">
             <TbReportAnalytics size={24}  className={`mr-2 ${ activeSection === 'Reports' ? 'text-white' : 'text-[#AAADAE]' } `} />
