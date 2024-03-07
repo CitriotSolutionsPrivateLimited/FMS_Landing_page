@@ -19,12 +19,12 @@ const WorkStatus = () => {
 
 
   const cardData = [
-    { id: 1, title: 'Total Activity', icon: <TbActivity size={28}/>, percentage: '60%', time:'2h 30Min', arrow:<GoArrowUp />  , active: '15%'},
-    { id: 2, title: 'Idle Time', icon: <TbClockStop size={28}/>, percentage: '15%', time:'30Min', arrow:<GoArrowDown />  , active: '15%' },
-    { id: 3, title: 'Away', icon: <TbCup size={28}/>, percentage: '5%', time:'15Min', arrow:<GoArrowDown />  , active: '15%' },
-    { id: 4, title: 'Store Exit', icon: <TbDoorExit size={28}/>, percentage: '10', time:'Times', arrow:<GoArrowDown />  , active: '15%' },
-    { id: 5, title: 'Phone Usage', icon: <TbDeviceMobile size={28}/>, percentage: '10%', time:'15Min', arrow:<GoArrowUp />  , active: '15%' },
-    { id: 6, title: 'Uniform Violation', icon: <TbShirt size={28}/>, percentage: 'YES', time:'', arrow:<GoArrowUp />  , active: '15%' },
+    { id: 1, title: 'Total Activity', icon: <TbActivity size={28}/>, percentage: '60%', time:'2h 30Min', arrow:<GoArrowUp />  , active: '15%', green: true},
+    { id: 2, title: 'Idle Time', icon: <TbClockStop size={28}/>, percentage: '15%', time:'30Min', arrow:<GoArrowDown />  , active: '15%', green: false },
+    { id: 3, title: 'Away', icon: <TbCup size={28}/>, percentage: '5%', time:'15Min', arrow:<GoArrowDown />  , active: '15%', green: false },
+    { id: 4, title: 'Store Exit', icon: <TbDoorExit size={28}/>, percentage: '10', time:'Times', arrow:<GoArrowDown />  , active: '15%', green: false },
+    { id: 5, title: 'Phone Usage', icon: <TbDeviceMobile size={28}/>, percentage: '10%', time:'15Min', arrow:<GoArrowUp />  , active: '15%', green: true },
+    { id: 6, title: 'Uniform Violation', icon: <TbShirt size={28}/>, percentage: 'YES', time:'', arrow:<GoArrowUp />  , active: '15%', green: true },
 
   ];
 
@@ -88,7 +88,7 @@ const WorkStatus = () => {
                 <div className=" text-[#6F42C1] text-4xl font-Lato">{card.percentage}</div>
                 <h2 className="text-sm  font-Lato text-[#818586] mt-3 ml-2">{card.time}</h2>
               </div><div className="flex  items-center justify-center  -mb-6">
-                  <div className={`mt-2 h-6 w-11 flex items-center justify-center rounded-md font-Lato  ${card.arrow.type.name === 'GoArrowUp' ? 'bg-[#D5E2DD] text-[#317159]' : 'bg-[#F0D7D3] text-[#B93A28]'} text-xs`}>
+                  <div className={`mt-2 h-6 w-11 flex items-center justify-center rounded-md font-Lato  ${card.green ? 'bg-[#D5E2DD] text-[#317159]' : 'bg-[#F0D7D3] text-[#B93A28]'} text-xs`}>
                     {card.arrow} {card.active}
                   </div>
                   <h2 className="text-xs  font-Lato text-[#818586] mt-3 ml-1">vs Last week</h2>
@@ -101,13 +101,13 @@ const WorkStatus = () => {
                           data: {
                             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                             datasets: [{
-                              data: card.arrow.type.name === 'GoArrowUp' ? [0, 1, 4, 5, 2, 8, 10] : [10, 8, 2, 5, 4, 1, 0],
+                              data: card.green ? [0, 1, 4, 5, 2, 8, 10] : [10, 8, 2, 5, 4, 1, 0],
                               fill: true,
-                              borderColor: card.arrow.type.name === 'GoArrowUp' ? '#317159' : '#B93A28',
+                              borderColor: card.green ? '#317159' : '#B93A28',
                               borderWidth: 1.5,
                               tension: 0.4,
                               pointRadius: 0,
-                              backgroundColor: card.arrow.type.name === 'GoArrowUp' ? '#D5E2DD' : '#F0D7D3',
+                              backgroundColor: card.green ? '#D5E2DD' : '#F0D7D3',
                             }]
                           },
                           options: {
