@@ -42,7 +42,7 @@ function EmployeesTeam() {
   ]
 
   return (
-    <div className='p-8'>
+    <div className='p-8 w-full'>
       <div className="flex-grow  ">
         <div className='flex flex-row font-Lato text-3xl mt-24'>
           <h1 className='flex text-[#6F42C1] mr-2'>6</h1>
@@ -92,9 +92,9 @@ function EmployeesTeam() {
             </Select>
           </div>
         </div>
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap flex-grow mt-6'>
           {employeesData.map((empl) => (
-            <div className='flex flex-col bg-white mt-10 rounded-lg p-3 mr-5 mb-4' style={{width:'250px', height:'280px'}}>
+            <div className='flex flex-col bg-white mt-6 rounded-lg p-3 mr-5 mb-4 w-56 h-72' >
               <div className='flex flex-row justify-between'>
                 <div className='flex flex-col '>
                   <img src={empl.img} className='w-16 h-16' />
@@ -106,7 +106,7 @@ function EmployeesTeam() {
               <span className=' font-Lato text-xs mt-2'>{empl.name}</span>
               <span className='text-[#818586] font-Lato text-xs mt-1'>{empl.designation}</span>
               <span className={` ${empl.status === 'Working' ? 'text-[#317159]' : 'text-[#B93A28]' } font-Lato text-xs mt-1` }>{empl.status}</span>
-              <div className='bg-[#F8F9FA] mt-4 rounded-md p-2' style={{width:'225px', height:'150px'}}>
+              <div className='bg-[#F8F9FA] mt-6 rounded-md p-2' >
                 <div className='flex flex-row font-Lato text-xs justify-between '>
                   <div className='flex flex-col'>
                   <span className='text-[#818586] '>{empl.department}</span>

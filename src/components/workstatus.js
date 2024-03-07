@@ -29,10 +29,10 @@ const WorkStatus = () => {
   ];
 
   return (
-    <div className=" rounded-lg shadow-md overflow-hidden w-full bg-white mt-5">
+    <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5">
       <div className="flex items-center p-4 ">
         <span className="mr-10 text-2xl font-Lato font-bold text-[#2D3436]">Work Status</span>
-        <div className="ml-44 ">
+        <div className="ml-20 ">
           <Select 
             defaultValue="Select Franchise"
             style={{ width: 150, height:35, fontSize: '20px' }}
@@ -73,10 +73,10 @@ const WorkStatus = () => {
             </Select>
         </div>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8  mt-10 mb-10 ml-4 " style={{width:'1050px', height:'360px'}}>
+      {/* style={{width:'1050px', height:'360px'}} */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 mb-10 ml-4 " >
         {cardData.map((card) => (
-          <div key={card.id} className="bg-white rounded-lg shadow-md p-3">
+          <div key={card.id} className="bg-white rounded-lg shadow-md p-3 mr-4 mt-4">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-semibold font-Lato">{card.title}</h2>
               <div className="bg-[#E1D8F2] h-10 w-10 flex items-center justify-center rounded-md text-[#6F42C1]">

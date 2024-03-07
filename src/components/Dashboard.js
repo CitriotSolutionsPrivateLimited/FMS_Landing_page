@@ -21,15 +21,16 @@ function Dashboard() {
 
   return (
 
-
-      <div className="flex-grow p-8 "> 
-      <div className="flex  mt-24 items-center">
+    // style={{width:'560px', height:'350px'}}
+      <div className="flex-grow p-10 "> 
+        <div className="flex  mt-24 items-center">
             <div className="text-[#818586] cursor-pointer font-Lato text-sm" onClick={()=>navigate('/')}>Home</div>
             <div className="w-1 h-1  bg-[#8C68CD] rounded-full ml-2 mr-2"></div>
             <span className='text-[#8C68CD] text-sm'>Dashboard</span>
         </div>
-      <Row  className="flex-row mt-3  justify-between">
-        <Col className="dashboard md:flex-row md:p-5 rounded-lg flex flex-row items-center justify-between" style={{width:'560px', height:'350px'}}>
+       <Row  className="flex-row mt-3 ">
+        <Col className="dashboard md:flex-row md:p-5 rounded-lg flex flex-row items-center justify-between lg:w-1/2 h-80" 
+        >
           <div className='flex flex-col w-2/3'>
             <h1 className="md:text-4xl lg:text-3xl sm:text-xl text-white  leading-tight font-Lato"> Welcome,</h1>
             <p className="mt-1 md:text-xl lg:text-xl sm:text-2xl text-white  leading-tight  font-medium font-Lato">Ralph Edwards</p>
@@ -41,10 +42,10 @@ function Dashboard() {
           </div>
         </Col>
         <TeamMembers />
-        <div className='flex w-full flex-row mt-5  justify-between'>
+        <div className='flex flex-row w-full mt-5  justify-between'>
           <WorkStatus />
         </div>
-        <div className='flex w-full flex-row mt-5  justify-between'>
+        <div className='flex flex-row  w-full mt-5  justify-between'>
           <Attentiveness />
         </div>
         <Performers />

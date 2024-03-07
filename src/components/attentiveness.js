@@ -84,10 +84,10 @@ const handleCheckboxChange = (event) => {
 
 
   return (
-    <div className=" rounded-lg shadow-md overflow-hidden w-full bg-white mt-5">
+    <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5">
       <div className="flex items-center p-4 ">
         <span className="mr-10 text-2xl font-Lato font-bold text-[#2D3436]">Attentiveness</span>
-        <div className="ml-44 ">
+        <div className="ml-20 ">
           <Select 
             defaultValue="Select Franchise"
             style={{ width: 150, height:35, fontSize: '20px' }}

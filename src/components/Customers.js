@@ -42,7 +42,7 @@ function Customers() {
     }
   }
   return (
-    <div className='p-8'>
+    <div className='p-8 '>
       <div className="flex-grow  ">
       <div className="flex  mt-24 items-center">
         <div className="text-[#818586] cursor-pointer font-Lato text-sm" onClick={() => navigate('/')}>Home</div>
@@ -54,7 +54,7 @@ function Customers() {
       <div className=" rounded-lg shadow-md overflow-hidden w-full bg-white p-4">
         <div className="flex items-center ">
           <span className="mr-48 text-2xl font-Lato font-bold text-[#2D3436]">Customers</span>
-          <div className="ml-96 ">
+          <div className="ml-80 ">
             <Select
               defaultValue="Select Franchise"
               style={{ width: 150, height: 35, fontSize: '20px' }}

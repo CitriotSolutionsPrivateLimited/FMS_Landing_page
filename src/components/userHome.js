@@ -35,7 +35,7 @@ function UserHome(path) {
 			<DashboardHeader />
 		</div>
 	}
-	<div style={{ display: 'flex', flexDirection: 'row', height: '100vh' }}>
+	<div style={{ display: 'flex', flexDirection: 'row' }}>
 		<Sidebar />
 		<div className="content-wrapper" style={{ flex: '1', overflowY: 'auto', background: '#F7FAFC' }}>
 			<Routes>
