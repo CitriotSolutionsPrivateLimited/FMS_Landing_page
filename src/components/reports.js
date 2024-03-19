@@ -599,7 +599,7 @@ function Reports() {
             <div className="flex items-center p-4 ">
               <span className="mr-10 text-2xl font-Lato font-bold ">Customers In The Store</span>
              
-              <div className="ml-80">
+              <div className="ml-72">
                 <Select
                   defaultValue="Select Franchise"
                   style={{ width: 150, height: 40, fontSize: '20px' }}
@@ -621,7 +621,7 @@ function Reports() {
               </div>
               <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-7'>Export</button>
             </div>
-            <div className='p-4 w-full' >
+            <div className='p-4' style={{width:'1050px', height:'370px'}}>
               <Line data={lineData} customerGraph={true} CustomTooltip={CustomTooltipforCustomer}/>
             </div>
           </div>
