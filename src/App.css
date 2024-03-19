@@ -107,3 +107,36 @@
   backdrop-filter: blur(38.4886px);
 }
 
+.ant-select-focused .ant-select-selector,
+.ant-select-selector:hover {
+  border-color: #8C68CD !important;
+  box-shadow: 0 0 0 2px rgba(140, 104, 205, 0.2) !important;
+}
+
+.ant-select-focused.ant-select-multiple .ant-select-selector,
+.ant-select-selector:hover.ant-select-multiple .ant-select-selector {
+  border-color: #8C68CD !important;
+}
+
+.ant-select-single.ant-select-open .ant-select-selector,
+.ant-select-single.ant-select-focused .ant-select-selector {
+  border-color: #8C68CD !important;
+}
+
+.ant-select-multiple.ant-select-open .ant-select-selector,
+.ant-select-multiple.ant-select-focused .ant-select-selector {
+  border-color: #8C68CD !important;
+}
+
+.ant-input:focus, 
+.ant-input:hover {
+  border-color: #8C68CD !important;
+  box-shadow: 0 0 0 2px rgba(140, 104, 205, 0.2) !important;
+}
+
+/* Style for password input field with focus and hover */
+.ant-input-password:focus, 
+.ant-input-password:hover {
+  box-shadow: 0 0 0 2px rgba(140, 104, 205, 0.2) !important;
+  border-color: #8C68CD !important;
+}

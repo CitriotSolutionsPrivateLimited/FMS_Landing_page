@@ -16,10 +16,10 @@ const Performers = () => {
   };
 
   const PerformersData = [
-    {img: tp4 ,name: 'Jenny Wilson', designation: 'Designation', count: '203', work: '2021', rank: g2 },
-    {img: tp3 ,name: 'Guy Hawkins', designation: 'Designation', count: '200', work: '2020', rank: g3 },
-    {img: tp2 ,name: 'Brooklyn Simmons', designation: 'Designation', count: '198', work: '2020', rank: 4 },
-    {img: tp1 ,name: 'Savannah Nguyen', designation: 'Designation', count: '180', work: '2020', rank: 5 },
+    {img: tp4 ,name: 'Jayadev Mitali', designation: 'Designation', count: '203', work: '2021', rank: g2 },
+    {img: tp3 ,name: 'Jitendra Choudhary', designation: 'Designation', count: '200', work: '2020', rank: g3 },
+    {img: tp2 ,name: 'Avantas Ghosal', designation: 'Designation', count: '198', work: '2020', rank: 4 },
+    {img: tp1 ,name: 'Barsati Sandipa', designation: 'Designation', count: '180', work: '2020', rank: 5 },
   ];
 
 
@@ -66,7 +66,7 @@ const Performers = () => {
           </div>
 
           <div className='flex items-center justify-center flex-col mt-4 gap-1'>
-            <span className='text-[#6F42C1] font-Lato text-base'>Esther Howard</span>
+            <span className='text-[#6F42C1] font-Lato text-base'>Hardeep Suksma</span>
             <span className='font-Lato text-sm'>Designation</span>
             <span className='text-[#818586] text-xs font-Lato'>Working Since 2022</span>
             <div className='bg-[#D6EAF7] text-[#3498DB] w-24 h-7 flex items-center justify-center rounded-lg font-Lato text-xs'>212 Servings</div>

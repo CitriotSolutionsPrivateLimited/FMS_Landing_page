@@ -58,7 +58,11 @@ import timesheet1 from '../images/Ellipse 4027.png'
 import timesheet2 from '../images/Ellipse 4027 (1).png'
 import timesheet3 from '../images/Ellipse 4027 (2).png'
 import timesheet4 from '../images/Ellipse 4027 (3).png'
-
+import tse1 from '../images/tse1.png'
+import tse2 from '../images/tse2.png'
+import tse3 from '../images/tse3.png'
+import tse4 from '../images/tse4.png'
+import newLogo from '../images/Logo 4.png'
 
 
 export {
@@ -71,4 +75,5 @@ emp1,emp2,emp3, emp4,d2,
 tp1,tp2,tp3,tp4,tp5,
 g1,g2,g3,customer1, customer2, customer3, customer4,e1, e2,e3,e4,e5,e6, 
 ts1, timesheet1, timesheet2, timesheet3, timesheet4,
+tse1,tse2,tse3,tse4, newLogo
 };

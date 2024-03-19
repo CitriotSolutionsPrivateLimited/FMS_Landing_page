@@ -16,10 +16,10 @@ const menuOptions = [
 ];
 
 const teamMembersData = [
-  {img: emp1 ,name: 'Wade Warren', designation: 'Designation', time: '14h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
-  { img: emp2, name: 'Jenny Wilson', designation: 'Designation', time: '4h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
-  { img: emp3, name: 'Albert Flores', designation: 'Designationr', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
-  { img: emp3, name: 'Albert Flores', designation: 'Designation', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  {img: emp1 ,name: 'Amrish Ilyas', designation: 'Designation', time: '14h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: emp2, name: 'Avantas Ghosal', designation: 'Designation', time: '4h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: emp3, name: 'Jayadev Mitali', designation: 'Designationr', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: emp3, name: 'Vijai Sritharan', designation: 'Designation', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
 
 ];
 
@@ -83,7 +83,7 @@ const TeamMembers = () => {
 
   return (
     // style={{width:'500px', maxHeight:'350px', overflowY:'auto'}}
-    <div className="flex flex-col md:p-3 bg-white rounded-lg lg:w-5/12 h-80 ml-4" style={{width:'470px', overflowY:'auto'}}>
+    <div className="flex flex-col md:p-3 bg-white rounded-lg lg:w-5/12 h-96 ml-4" style={{width:'470px', overflowY:'auto'}}>
       <div className="flex items-center  mb-4">
         <div className="flex flex-col">
           <span className="text-[#2D3436] font-Lato text-sm font-semibold">Team Members</span>

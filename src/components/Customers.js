@@ -76,7 +76,7 @@ function Customers() {
           </div>
         </div>
 
-        <div className='flex flex-row border border-grey rounded-2xl p-5 items-center mt-4 gap-8'>
+        {/* <div className='flex flex-row border border-grey rounded-2xl p-5 items-center mt-4 gap-8'>
           { customersData.map((cmr) => (
             <div className={`flex flex-col items-center justify-between ${customer === cmr.age ? 'bg-[#D3DAF0]' : 'bg-white hover:bg-[#F8F9FA]'}  rounded-md p-2`} style={{width:'100px', height:'140px'}} onClick={()=>setCustomer(cmr.age)}>
               <img src={cmr.img} className='w-20 h-20'/>
@@ -84,9 +84,9 @@ function Customers() {
               <div className='bg-[#5470C6] text-white w-16 h-7 flex items-center justify-center rounded-md font-Lato text-sm mt-3 '>Age {cmr.age}</div>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <div className='mt-3 flex flex-row gap-10 mb-4'>
+        <div className='mt-7 flex flex-row gap-10 mb-4'>
           <div className="bg-white rounded-2xl shadow-lg p-5 font-Lato " style={{width:'230px', height:'150px'} }>
             <div className="flex flex-col gap-2" >
               <div className="bg-[#E1D8F2] h-12 w-12 flex items-center justify-center rounded-lg text-[#6F42C1]">

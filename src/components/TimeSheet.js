@@ -1,37 +1,110 @@
-import React, { useEffect, useState } from 'react';
-import { ts1,timesheet1,timesheet2,timesheet3,timesheet4 } from '../images/constants';
+import React, { useEffect, useState, useRef } from 'react';
+import { ts1,timesheet1,timesheet2,timesheet3,timesheet4, } from '../images/constants';
 import { useNavigate } from "react-router-dom";
 import { Select } from 'antd';
-import { RiDeleteBinLine } from "react-icons/ri";
-import {  IoSearch } from "react-icons/io5";
-import { CiMail } from "react-icons/ci";
-import { FiPhone } from "react-icons/fi";
+import {  IoSearch, IoChevronDownCircleOutline, IoChevronUpCircleOutline } from "react-icons/io5";
+
 
 const { Option } = Select;
 
+
+const employeesData = [
+  {img: timesheet1, name: 'Naveen Tikaram', designation:'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'70%', 
+  timesheets:[
+  {
+    timing: [
+      {activities:[
+        {  range:'9:00am-9:30am', status:'active', duration:'30 Minutes'},
+        {  range:'9:00am-9:40am', status:'idle', duration:'10 Minutes'},
+        {  range:'9:40am-10:00am', status:'exit', duration:'20 Minutes'},
+        ],
+      startTime:'9:00am'}
+    ]
+  },
+  {
+    timing: [
+      {activities:[
+        {  range:'10:00am-10:05am', status:'away', duration:'5 Minutes'},
+        {   range:'10:05am-11:00am', status:'active', duration:'55 Minutes'},
+        ],
+      startTime:'10:00am'}
+    ]
+  },
+  {
+    timing: [
+      {activities:[
+        {  range:'11:00am-11:20am', status:'phone', duration:'20 Minutes'},
+        {  range:'11:00am-11:05am', status:'violation', duration:'5 Minutes'},
+        ],
+        startTime:'11:00am'}
+    ]
+  },
+  {
+    timing: [
+        {startTime:'12:00pm'}
+    ]
+  },
+  {
+    timing: [
+        {startTime:'1:00pm'}
+    ]
+  },
+  {
+    timing: [
+        {startTime:'2:00pm'}
+    ]
+  },
+  // {
+  //   timing: [
+  //       {startTime:'3:00pm'}
+  //   ]
+  // },
+  // {
+  //   timing: [
+  //       {startTime:'4:00pm'}
+  //   ]
+  // },
+
+]},
+
+  {img: timesheet2, name: 'Sri Mukhiya', designation:'Cashier', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'68%'},
+
+  {img: timesheet3, name: 'Gopal Sarkar', designation:'Chef', checkIn:'9:00AM', CheckOut:'working', active:'4h:20 Min', productivity:'74%'},
+
+  {img: timesheet4, name: 'Mahesh Santara', designation:'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'66%'},
+]
+
 function TimeSheet() {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
 
-  // const employeesData = [
-  //   {img: e1, name: 'Brooklyn Simmons', designation:'Cashier', status:'Working', department:'Department', date:'12/12/2023', mail:'Simons@gmail.com', phone:'(239) 555-0108'},
+  const [memberDataVisibility, setMemberDataVisibility] = useState(Array(employeesData.length).fill(false));
 
-  //   {img: e2, name: 'Leslie Alexander', designation:'Cashier', status:'Offduty', department:'Department', date:'11/10/2023', mail:'alma.lawson@example.com', phone:'(406) 555-0120'},
+  const toggleEmployeeDetails = (index) => {
+    const updatedVisibility = [...memberDataVisibility];
+    updatedVisibility[index] = !updatedVisibility[index];
+    setMemberDataVisibility(updatedVisibility);
+  };
 
-  //   {img: e3, name: 'Kathryn Murphy', designation:'Chef', status:'Working', department:'Department', date:'10/12/2023', mail:'Murphy@example.com', phone:'(704) 555-0127'},
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-  //   {img: e4, name: 'Eleanor Pena', designation:'Cashier', status:'Offduty', department:'Department', date:'12/12/2023', mail:'Pena@example.com', phone:'(316) 555-0116'},
+  const handleInputFocus = () => {
+    setIsFocused(true);
+  };
 
-  //   {img: e5, name: 'Robert Fox', designation:'Cashier', status:'Working', department:'Department', date:'11/12/2023', mail:'fox@example.com', phone:'(219) 555-0114'},
-
-  //   {img: e6, name: 'Guy Hawkins', designation:'Housekeeping', status:'Offduty', department:'Department', date:'09/11/2023', mail:'hawkins@example.com', phone:'(808) 555-0111'},
-  // ]
+  const handleInputBlur = () => {
+    setIsFocused(false);
+  };
 
   return (
     <div className=' p-8'>
       <div className="flex-grow  ">
           <h1 className=' flex flex-row font-Lato text-3xl mt-24'>Time Sheet</h1>
 
-        <div className="flex mt-4  items-center">
+        <div className="flex mt-4 font-Lato items-center">
           <div className="text-[#818586] cursor-pointer font-Lato text-sm" onClick={() => navigate('/')}>Home</div>
           <div className="w-1 h-1  bg-[#818586] rounded-full ml-2 mr-2"></div>
           <span className='text-[#818586] text-sm'>Employees</span>
@@ -41,10 +114,14 @@ function TimeSheet() {
       </div>
       <div className='flex flex-col mt-9'>
         <div className='flex flex-row items-center'>
-          <div className="flex items-center rounded-lg px-3 py-2 bg-[white] w-60 h-11 border hover:border-[#6F42C1]" style={{width:'290px', height:'53px'}}>
-            <IoSearch color='#E1D8F2' size={20} className='mr-2'/>
+          <div className={`flex items-center rounded-lg px-3 py-2 bg-[white] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'}`} style={{width:'290px', height:'53px'}}>
+            <IoSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2'/>
             <input
               type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
               placeholder="Search Team Employees"
               className=" outline-none placeholder-[#B2B5B9] flex-grow text-black bg-[white] font-Lato text-base"
             />
@@ -103,29 +180,83 @@ function TimeSheet() {
             <span>Uniform Violation</span>
           </div>
           <div className='flex bg-white w-36 h-10 rounded-lg items-center justify-center gap-2'>
-            <img src={ts1} className=' w-5 h-5 rounded-full' />
+            {/* <img src={ts1} className=' w-5 h-5 rounded-full' /> */}
+            <div className='bg-[#AAADAE] w-5 h-5 rounded-full'></div>
             <span>Phone Usage</span>
           </div>
         </div>
+        <div className='flex flex-col'>
+          {employeesData.map((empl, index) => (
+            <><table className="border border-collapse mt-5 bg-white w-full">
+              <thead className=" text-[#6F42C1]  font-Lato ">
+                <tr>
+                  <th className="p-2 font-Lato text-left">Employee Name</th>
+                  <th className="p-2 whitespace-nowrap font-Lato text-left">Check In</th>
+                  <th className="p-2 whitespace-nowrap font-Lato text-left">Check Out</th>
+                  <th className="p-2 whitespace-nowrap font-Lato text-left">Total Worked Hours</th>
+                  <th className="p-2 whitespace-nowrap font-Lato text-left">Productivity</th>
 
-        <div className='flex flex-row text-[#8C68CD] font-Lato mt-8 gap-20 font-bold text-lg'>
-          <span>Employee Name</span>
-          <span>Working Timing</span>
-          <span>Active Time</span>
-        </div>
-        <div className='flex bg-white border mt-5 p-3' style={{width:'49%', height:'80px'}}>
-            <img src={timesheet1} alt="Employee" className='w-14 h-14'/>
-          <div>
-            <span></span>
-            <span></span>
-          </div>
-          <div></div>
-          <div></div>
+                  <th className="p-2 whitespace-nowrap font-Lato text-left cursor-pointer" onClick={() => toggleEmployeeDetails(index)}>{memberDataVisibility[index] ? <IoChevronUpCircleOutline size={24} /> : <IoChevronDownCircleOutline size={24} />}</th>
+                </tr>
+              </thead>
+              <tbody className="  font-Lato p-2">
+                <tr className="">
+
+                  <td className="w-44 flex flex-row p-1">
+                    <img src={empl.img} alt="Employee" className="w-12 h-12" />
+                    <div className="flex flex-col ml-1">
+                      <span>{empl.name}</span>
+                      <span className='text-[#818586]'>{empl.designation}</span>
+                    </div>
+                  </td>
+                  <td className="p-2">
+                    <span>{empl.checkIn}</span>
+                  </td>
+                  <td className="p-2 ">
+                    <span>{empl.CheckOut}</span>
+                  </td>
+                  <td className="p-2 ">
+                    <span>{empl.active}</span>
+                  </td>
+                  <td className="p-2 ">
+                    <span>{empl.productivity}</span>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+
+               {memberDataVisibility[index] && (
+              <div className='bg-white h-64 border p-3' style={{ overflowY:'auto'}}>
+              {empl && empl.timesheets && empl.timesheets.map((tt)=> (
+                <><div className="border-t ml-24"></div><div className="  font-Lato p-2 ">
+                  {tt && tt.timing && tt.timing.map((tg) => (  
+                  <div className=" flex flex-row">
+                    <div className="p-2 items-start w-16 mr-6">
+                      <span>{tg.startTime}</span>
+                    </div>
+                    {tg && tg.activities && tg.activities.map((e) => (
+                    <div className={`w-36 h-9 ${e.status === 'violation' ? 'text-[#A35600] bg-[#FFC585] border-[#A35600]': e.status === 'idle' ? 'text-[#005B98] bg-[#85C1E9] border-[#005B98]' : e.status === 'away' ? 'text-[#B93A28] bg-[#D5897E] border-[#B93A28]' : e.status === 'exit' ? 'text-[#684F00] bg-[#D7C17F] border-[#684F00]' : e.status === 'phone' ? 'text-[#2D3436] bg-[#AAADAE] border-[#2D3436]' : 'text-[#59007D] bg-[#C39BD3] border-[#59007D]'} flex flex-col  text-xs items-center justify-center rounded-lg border  mr-5 `}>
+                      <span>{e.range}</span>
+                      <span>{e.duration}</span>
+                    </div>
+                      ))} 
+                  </div>
+                  ))}
+                 
+                </div></>
+              ))}
+                  </div>
+            )}
+            </>
+            
+))}
         </div>
 
 
       </div>
-      
+
+
     </div>
   )
 }

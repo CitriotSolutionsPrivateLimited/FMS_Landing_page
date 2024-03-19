@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Row, Col, Input, Button, Form, Checkbox, message } from "antd";
-import { loginLogo, login1, login2, login3, login4 } from "./images/constants";
+import { newLogo, login1, login2, login3, login4 } from "./images/constants";
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { TbEyeCheck } from "react-icons/tb";
 import MultiStepForm from './register'
@@ -49,7 +49,7 @@ function Login() {
         {/* login form */}
         <Col className="lg:w-2/5 ">
           <div className="pt-8">
-            <img src={loginLogo} onClick={()=>navigate('/')} style={{ cursor: 'pointer' }} className="md:w-40 md:h-14 sm:w-24 sm:h-8  lg:ml-96 md:ml-auto" />
+            <img src={newLogo} onClick={()=>navigate('/')} style={{ cursor: 'pointer' }} className="md:w-40 md:h-14 sm:w-24 sm:h-8  lg:ml-96 md:ml-auto" />
           </div>
           <div className="lg:w-2/3 sm:w-full sm:p-4 md:p-16 lg:p-0">
             <div className="md:pt-16 lg:-ml-20 md:ml-32 ">
@@ -101,7 +101,7 @@ function Login() {
                     placeholder="Enter Your Password"
                     className="md:text-lg sm:text-sm sm:h-12 md:h-16 md:mb-2 border-slate-400 hover:border-[#8C68CD]"
                     onChange={(e) => setPassword(e.target.value)}
-                    iconRender={visible => (visible ? <TbEyeCheck onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color: 'gray' }} /> : <RiEyeCloseLine onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color: 'gray' }} />)} />
+                    iconRender={visible => (visible ? <TbEyeCheck onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color: 'gray', cursor:'pointer' }} /> : <RiEyeCloseLine onClick={togglePasswordVisibility} style={{ fontSize: '1.5rem', color: 'gray', cursor:'pointer' }} />)} />
                 </Form.Item>
 
                 <Form.Item>

@@ -1,9 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import { Select } from 'antd';
-import { TbActivity, TbClockStop, TbDoorExit, TbShirt, TbDeviceMobile, TbCup } from "react-icons/tb";
-import { GoArrowUp, GoArrowDown } from "react-icons/go";
-import Chart from 'chart.js/auto';
 import { ResponsiveLine } from '@nivo/line'
+import Line from './charts/Line';
 
 const { Option } = Select;
 
@@ -130,46 +128,7 @@ const handleCheckboxChange = (event) => {
       </div>
       
       <div className=" " style={{width:'1050px', height:'370px'}}>
-          <ResponsiveLine
-              data={filteredData}
-              margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-              xScale={{ type: 'point' }}
-              yScale={{
-                  type: 'linear',
-                  min: 0,
-                  max: 'auto',
-                  // stacked: true,
-                  reverse: false
-              }}
-              yFormat=" >-.2f"
-              axisTop={null}
-              axisRight={null}
-              axisBottom={{
-                  tickSize: 5,
-                  tickPadding: 5,
-                  tickRotation: 0,
-                  legendOffset: 36,
-                  legendPosition: 'middle',
-                  truncateTickAt: 0
-              }}
-              axisLeft={{
-                  tickSize: 5,
-                  tickPadding: 5,
-                  tickRotation: 0,
-                  legend: 'Time In Minutes',
-                  legendOffset: -40,
-                  legendPosition: 'middle',
-                  truncateTickAt: 0
-              }}
-              enablePoints={false}
-              pointSize={10}
-              pointColor={{ theme: 'background' }}
-              pointBorderWidth={2}
-              pointBorderColor={{ from: 'serieColor' }}
-              pointLabelYOffset={-12}
-              colors={Object.keys(checkedItems).filter((key) => checkedItems[key]).map((key) => lineColors[key])}
-              useMesh={true}
-          />
+         <Line data={filteredData} Attentiveness={true} checkedItems={checkedItems} lineColors={lineColors}/>
         </div>
 
 

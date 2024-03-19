@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import { chandra, logo } from "./constants";
-import { loginLogo } from "../images/constants";
+import { loginLogo, newLogo } from "../images/constants";
 import Logo from "./logo";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -60,9 +60,9 @@ function Header() {
 					href="#"
 					className="logo absolute z-10">
 					<img
-						src={loginLogo}
+						src={newLogo}
 						alt="VIZONAI"
-						style={{ width: "100%", height: "auto",  }}
+						style={{ width: "95%", height: "auto",  }}
 					/>
 				</a>
 				<ul className="flex mt-7 ml-72">

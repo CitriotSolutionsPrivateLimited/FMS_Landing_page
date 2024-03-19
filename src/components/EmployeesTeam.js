@@ -6,7 +6,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import {  IoSearch } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
-
+import { TbTrash } from 'react-icons/tb';
 const { Option } = Select;
 
 function EmployeesTeam() {
@@ -28,17 +28,17 @@ function EmployeesTeam() {
   };
 
   const employeesData = [
-    {img: e1, name: 'Brooklyn Simmons', designation:'Cashier', status:'Working', department:'Department', date:'12/12/2023', mail:'Simons@gmail.com', phone:'(239) 555-0108'},
+    {img: e1, name: 'Umesh Raut', designation:'Cashier', status:'Working', department:'Department', date:'12/12/2023', mail:'umesh@gmail.com', phone:'(239) 555-0108'},
 
-    {img: e2, name: 'Leslie Alexander', designation:'Cashier', status:'Offduty', department:'Department', date:'11/10/2023', mail:'alma.lawson@example.com', phone:'(406) 555-0120'},
+    {img: e2, name: 'Sitaram Umara', designation:'Cashier', status:'Offduty', department:'Department', date:'11/10/2023', mail:'sitaram@example.com', phone:'(406) 555-0120'},
 
-    {img: e3, name: 'Kathryn Murphy', designation:'Chef', status:'Working', department:'Department', date:'10/12/2023', mail:'Murphy@example.com', phone:'(704) 555-0127'},
+    {img: e3, name: 'Krishna Sharma', designation:'Chef', status:'Working', department:'Department', date:'10/12/2023', mail:'sharma@example.com', phone:'(704) 555-0127'},
 
-    {img: e4, name: 'Eleanor Pena', designation:'Cashier', status:'Offduty', department:'Department', date:'12/12/2023', mail:'Pena@example.com', phone:'(316) 555-0116'},
+    {img: e4, name: 'Ganesh Shelke', designation:'Cashier', status:'Offduty', department:'Department', date:'12/12/2023', mail:'ganesh@example.com', phone:'(316) 555-0116'},
 
-    {img: e5, name: 'Robert Fox', designation:'Cashier', status:'Working', department:'Department', date:'11/12/2023', mail:'fox@example.com', phone:'(219) 555-0114'},
+    {img: e5, name: 'Manish Mehta', designation:'Cashier', status:'Working', department:'Department', date:'11/12/2023', mail:'manish@example.com', phone:'(219) 555-0114'},
 
-    {img: e6, name: 'Guy Hawkins', designation:'Housekeeping', status:'Offduty', department:'Department', date:'09/11/2023', mail:'hawkins@example.com', phone:'(808) 555-0111'},
+    {img: e6, name: 'Bharat Arora', designation:'Housekeeping', status:'Offduty', department:'Department', date:'09/11/2023', mail:'bharat@example.com', phone:'(808) 555-0111'},
   ]
 
   return (
@@ -100,7 +100,7 @@ function EmployeesTeam() {
                   <img src={empl.img} className='w-16 h-16' />
                 </div>
                 <div>
-                  <RiDeleteBinLine size={28} color='#C76153' className='cursor-pointer'/>
+                  <TbTrash size={28} color='#C76153' className='cursor-pointer'/>
                 </div>
               </div>
               <span className=' font-Lato text-xs mt-2'>{empl.name}</span>

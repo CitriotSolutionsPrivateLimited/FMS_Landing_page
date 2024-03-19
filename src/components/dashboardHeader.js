@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LuCalendarDays } from "react-icons/lu";
 import { FiSearch } from "react-icons/fi";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { loginLogo, profile } from '../images/constants';
+import { newLogo, profile } from '../images/constants';
 
 
 function DashboardHeader() {
@@ -60,7 +60,7 @@ function DashboardHeader() {
     <div className="fixed top-0 left-0 w-full bg-white text-white p-4 flex justify-evenly items-center z-50">
       <div className="flex items-center">
         <div className="flex items-center mr-4">
-          <img src={loginLogo} style={{ cursor: 'pointer' }} className="md:w-40 md:h-14 sm:w-24 sm:h-8" />
+          <img src={newLogo} style={{ cursor: 'pointer' }} className="md:w-40 md:h-14 sm:w-24 sm:h-8" />
 
           <div className=" ml-20 h-14 w-14 bg-[#EFEFF0] rounded-full flex items-center justify-center">
             <LuCalendarDays color='#6F42C1' size={40}/>
@@ -68,12 +68,12 @@ function DashboardHeader() {
           
           <div className="flex flex-col ml-3">
             <span className="mr-2 text-[#818586] font-Lato text-lg">{getCurrentDateTime()}</span>
-            <span className='text-[#2D3436] font-Lato text-lg'>Third Wave Coffee, Bengaluru</span>
+            <span className='text-[#2D3436] font-Lato text-lg'>Steamy Brew Café, Bengaluru</span>
           </div>
         </div>
       </div>
       
-      <div className={`flex items-center rounded-2xl px-3 py-2 bg-[#F8F9FA] w-96 h-14 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'}  font-Lato`}>
+      <div className={`flex items-center rounded-2xl px-3 py-2 bg-[#F8F9FA] w-96 h-14 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'} font-maven `}>
         <FiSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={26} className='mr-2'/>
         <input
         type="text"
@@ -82,7 +82,7 @@ function DashboardHeader() {
         onChange={handleSearchChange}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        className="outline-none placeholder-[#B2B5B9] flex-grow text-black bg-[#F8F9FA]  text-lg border-transparent  placeholder-light"
+        className="outline-none placeholder-[#B2B5B9] flex-grow text-black bg-[#F8F9FA]  text-base border-transparent  placeholder-light font-extralight "
         style={{fontWeight: 100}}
       />
       </div>
@@ -94,7 +94,7 @@ function DashboardHeader() {
       <div className="flex items-center ">
         <img src={profile} alt="User Profile" className="w-16 h-16 " />
         <div className="flex flex-col ml-3">
-          <span className="mr-2  text-[#2D3436] font-Lato text-lg">Ralph Edwards</span>
+          <span className="mr-2  text-[#2D3436] font-Lato text-lg">Advitiya Sujeet</span>
           <span className='text-[#818586] font-Lato'>Manager</span>
         </div>
       </div>

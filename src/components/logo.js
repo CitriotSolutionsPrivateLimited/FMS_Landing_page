@@ -1,10 +1,11 @@
 import React from "react";
 import { logo, logoMobile } from "./constants";
+import { loginLogo, newLogo } from "../images/constants";
 
 class Logo extends React.Component {
   render() {
     const isMobile = window.innerWidth <= 767; // Adjust the breakpoint as needed
-    const src = isMobile ? logoMobile : logo;
+    const src = isMobile ? newLogo : logo;
 
     return (
       <img
