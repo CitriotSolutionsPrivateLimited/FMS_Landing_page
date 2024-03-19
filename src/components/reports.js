@@ -542,7 +542,7 @@ function Reports() {
               <div className="flex  ">
                 <h2 className="text-lg font-semibold font-Lato">{card.title}</h2>
                 <div className=" ml-7 ">
-                <div className={` h-6 w-11 flex items-center justify-center rounded-md font-Lato  ${card.green ? 'bg-[#D5E2DD] text-[#317159]' : 'bg-[#F0D7D3] text-[#B93A28]'} text-xs`}>
+                <div className={`ml-6 h-6 w-11 flex items-center justify-center rounded-md font-Lato  ${card.green ? 'bg-[#D5E2DD] text-[#317159]' : 'bg-[#F0D7D3] text-[#B93A28]'} text-xs `}>
                       {card.arrow} {card.percentage}</div>
                     <h2 className="text-xs  font-Lato text-[#818586] mt-1 ">vs Last week</h2>
                 </div>
