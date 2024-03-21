@@ -14,9 +14,9 @@ function Settings() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [section, setSection] = useState('profile');
   const [toggle, setToggle] = useState(false);
-  const [firstName, setFirstName] = useState('Bharat');
-  const [lastName, setLastName] = useState('Arora');
-  const [email, setEmail] = useState('bharat.arora@example.com');
+  const [firstName, setFirstName] = useState('Advitiya');
+  const [lastName, setLastName] = useState('Sujeet');
+  const [email, setEmail] = useState('sujeet.advitiya@gmail.com');
   const [role, setRole] = useState('Manager');
   const [timeZone, setTimeZone] = useState('Indian Standard Time (IST)');
 
@@ -89,7 +89,7 @@ function Settings() {
 
       { section === 'profile' && (<div className='flex flex-col bg-white w-full rounded-lg mt-10 p-5 font-Lato'>
         <div className='flex flex-row items-center'>
-          <span className='mr-96 text-xl'>Profile</span>
+          <span className='mr-60 text-xl'>Profile</span>
           <button className='border border-[#8C68CD] text-[#8C68CD] text-xs rounded-lg w-20 h-9 ml-96'>Cancel</button>
           <button className='bg-[#8C68CD] rounded-lg w-28 h-9 text-white text-xs ml-5'>Save Change</button>
         </div>
@@ -191,7 +191,7 @@ function Settings() {
 
       { section === 'security' && (<div className='flex flex-col bg-white w-full rounded-lg mt-10 p-5 font-Lato'>
         <div className='flex flex-row items-center'>
-          <span className='mr-96 text-xl'>Security</span>
+          <span className='mr-60 text-xl'>Security</span>
           <button className='border border-[#8C68CD] text-[#8C68CD] text-xs rounded-lg w-20 h-9 ml-96'>Cancel</button>
           <button className='bg-[#8C68CD] rounded-lg w-28 h-9 text-white text-xs ml-5'>Save Change</button>
         </div>

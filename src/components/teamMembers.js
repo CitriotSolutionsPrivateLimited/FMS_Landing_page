@@ -1,5 +1,5 @@
 import React,{useState, useRef, useEffect} from 'react';
-import { d1, emp1, emp2, emp3, emp4 } from '../images/constants';
+import { emp1, emp2, emp3, emp4, empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9 } from '../images/constants';
 import {  IoSearch } from "react-icons/io5";
 import { RiMenu2Fill } from "react-icons/ri";
 import { Menu, Dropdown, Button } from 'antd';
@@ -10,16 +10,19 @@ import { PiTextAlignCenterLight } from "react-icons/pi";
 
 const menuOptions = [
   { key: '1', label: 'All Designation' },
-  { key: '2', label: 'Designation 1' },
-  { key: '3', label: 'Designation 2' },
-  { key: '4', label: 'Designation 3'}
+  { key: '2', label: 'Waiter' },
+  { key: '3', label: 'Cashier' },
+  { key: '4', label: 'Assistant Manager'},
+  { key: '4', label: 'Chef'}
 ];
 
 const teamMembersData = [
-  {img: emp1 ,name: 'Amrish Ilyas', designation: 'Designation', time: '14h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
-  { img: emp2, name: 'Avantas Ghosal', designation: 'Designation', time: '4h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
-  { img: emp3, name: 'Jayadev Mitali', designation: 'Designationr', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
-  { img: emp3, name: 'Vijai Sritharan', designation: 'Designation', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', time: '14h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: empl2, name: 'Avantas Ghosal', designation: 'Cashier', time: '4h 30min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: empl3, name: 'Jayadev Mitali', designation: 'Chef', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
+  { img: empl7, name: 'Barsati Sandipa', designation: 'Chef', time: '2h 20min', dTime: '9:00 am to 6:00pm', aTime: '9:20 am to 6:20pm' },
 
 ];
 
@@ -87,7 +90,7 @@ const TeamMembers = () => {
       <div className="flex items-center  mb-4">
         <div className="flex flex-col">
           <span className="text-[#2D3436] font-Lato text-sm font-semibold">Team Members</span>
-          <span className=' text-[#818586] font-Lato text-xs'>{teamNumber > 0 ? `14 At Work` : 'No members added'}</span>
+          <span className=' text-[#818586] font-Lato text-xs'>{teamNumber > 0 ? `6 At Work` : 'No members added'}</span>
         </div>
         <div className={`ml-2 flex items-center rounded-lg px-3 py-2 bg-[#F8F9FA] w-48 h-9 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'}`} >
           <IoSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={16} className='mr-2'/>
@@ -124,7 +127,7 @@ const TeamMembers = () => {
               <span className="text-[#818586] font-Lato text-xs mt-1">{member.time}</span>
             </div>
             <div className={`flex flex-row ${memberDataVisibility[index] ? 'bg-[#3498DB]' : 'bg-[#8C68CD]'}  rounded-lg items-center ml-4 w-96 h-10`} >
-              <img src={member.img} className="flex w-12 h-12   -ml-2" />
+              <img src={member.img} className="flex w-12 h-12 rounded-full  -ml-2" />
               <span className='text-[#FDFDFD] ml-1 font-Lato w-32'>{member.name}</span>
               <button className={`flex bg-white  ${memberDataVisibility[index] ? 'text-[#3498DB]' : 'text-[#8C68CD]'}  rounded-3xl h-7 w-24 items-center justify-center font-Lato  text-xs`}>{member.designation}</button>
               {memberDataVisibility[index] ? (

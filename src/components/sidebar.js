@@ -77,7 +77,7 @@ function Sidebar() {
         </li>
 
         {activeSection === 'Employees' && employeesView && (
-        <div className={`flex pl-7`} onClick={()=>handleClick()}>
+        <div className={`flex `} onClick={()=>handleClick()}>
             <div className="">
                   <ul>
                     <div className='flex flex-row items-center justify-center'>
@@ -89,11 +89,10 @@ function Sidebar() {
                       <div className='flex flex-row items-center justify-center'>
                       {subSection === 'TeamMembers' && <div className='bg-[#6F42C1] rounded-full h-2 w-2 '></div>}
                       <li className={`p-3 flex items-center  ${subSection === 'TeamMembers' ? 'text-[#6F42C1]  font-Lato' :  'text-[#818586]'} `} onClick={() => setSubSection('TeamMembers')}>
-                      <Link to='/Userhome/Employees/TeamMembers'>Team Members</Link></li>
+                      <Link to='/Userhome/Employees/TeamMembers'>Employee Directory</Link></li>
                     </div>
                   </ul>
                 </div>
-          
         </div>
         )} 
 
@@ -144,7 +143,7 @@ function Sidebar() {
           )}
         </li>
         <li className="p-4 text-[#818586]">
-          <Link to="/Userhome/Reports" className="flex items-center">
+          <Link to="/Userhome/dashboard" className="flex items-center">
           <TbZoomQuestion size={19} color='#AAADAE' className="mr-2" />
             Help & Support
           </Link>

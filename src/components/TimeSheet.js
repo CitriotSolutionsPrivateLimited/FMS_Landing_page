@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { ts1,timesheet1,timesheet2,timesheet3,timesheet4, } from '../images/constants';
+import { empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9,timesheet1,timesheet2,timesheet3,timesheet4, } from '../images/constants';
 import { useNavigate } from "react-router-dom";
 import { Select } from 'antd';
 import {  IoSearch, IoChevronDownCircleOutline, IoChevronUpCircleOutline } from "react-icons/io5";
@@ -9,14 +9,14 @@ const { Option } = Select;
 
 
 const employeesData = [
-  {img: timesheet1, name: 'Naveen Tikaram', designation:'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'70%', 
+  {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'70%', 
   timesheets:[
   {
     timing: [
       {activities:[
-        {  range:'9:00am-9:30am', status:'active', duration:'30 Minutes'},
-        {  range:'9:00am-9:40am', status:'idle', duration:'10 Minutes'},
-        {  range:'9:40am-10:00am', status:'exit', duration:'20 Minutes'},
+        {  range:'Productive Time', status:'active', duration:'30 Minutes'},
+        {  range:'Idle Time', status:'idle', duration:'10 Minutes'},
+        {  range:'Store Exit', status:'exit', duration:'20 Minutes'},
         ],
       startTime:'9:00am'}
     ]
@@ -24,8 +24,8 @@ const employeesData = [
   {
     timing: [
       {activities:[
-        {  range:'10:00am-10:05am', status:'away', duration:'5 Minutes'},
-        {   range:'10:05am-11:00am', status:'active', duration:'55 Minutes'},
+        {  range:'Away Time', status:'away', duration:'5 Minutes'},
+        {   range:'Productive Time', status:'active', duration:'55 Minutes'},
         ],
       startTime:'10:00am'}
     ]
@@ -33,8 +33,8 @@ const employeesData = [
   {
     timing: [
       {activities:[
-        {  range:'11:00am-11:20am', status:'phone', duration:'20 Minutes'},
-        {  range:'11:00am-11:05am', status:'violation', duration:'5 Minutes'},
+        {  range:'Phone Usage', status:'phone', duration:'20 Minutes'},
+        {  range:'Uniform Violation', status:'violation', duration:'5 Minutes'},
         ],
         startTime:'11:00am'}
     ]
@@ -67,11 +67,13 @@ const employeesData = [
 
 ]},
 
-  {img: timesheet2, name: 'Sri Mukhiya', designation:'Cashier', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'68%'},
+  { img: empl2, name: 'Avantas Ghosal', designation: 'Cashier', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'68%'},
 
-  {img: timesheet3, name: 'Gopal Sarkar', designation:'Chef', checkIn:'9:00AM', CheckOut:'working', active:'4h:20 Min', productivity:'74%'},
+  {img: empl3, name: 'Jayadev Mitali', designation: 'Chef', checkIn:'9:00AM', CheckOut:'working', active:'4h:20 Min', productivity:'74%'},
 
-  {img: timesheet4, name: 'Mahesh Santara', designation:'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'66%'},
+  {img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'66%'},
+  {img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'62%'},
+  {img: empl7, name: 'Barsati Sandipa', designation: 'Chef', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'56%'},
 ]
 
 function TimeSheet() {
@@ -131,19 +133,12 @@ function TimeSheet() {
               defaultValue="Select Franchise"
               style={{ width: 160, height: 40, fontSize: '20px' }}
             >
-              <Option value="option1" className='text-xs'>Option 1</Option>
-              <Option value="option2" className='text-xl'>Option 2</Option>
-              <Option value="option3" className='text-xl'>Option 3</Option>
-            </Select>
-          </div>
-          <div className="ml-5 ">
-            <Select
-              defaultValue="Department"
-              style={{ width: 160, height: 40, fontSize: '20px' }}
-            >
-              <Option value="option1" className='text-xl'>Option 1</Option>
-              <Option value="option2" className='text-xl'>Option 2</Option>
-              <Option value="option3" className='text-xl'>Option 3</Option>
+              <Option value="Indiranagar" className='text-xs'>Indiranagar</Option>
+                <Option value="Kormangala" className='text-xs'>Kormangala</Option>
+                <Option value="HSR Layout" className='text-xs'>HSR Layout</Option>
+                <Option value="Jayanagar" className='text-xs'>Jayanagar</Option>
+                <Option value="Electronic City" className='text-xs'>Electronic City</Option>
+                <Option value="all" className='text-xs'>All Franchise</Option>
             </Select>
           </div>
           <div className="ml-5 ">
@@ -151,9 +146,10 @@ function TimeSheet() {
               defaultValue="Date and Time"
               style={{ width: 160, height: 40, fontSize: '20px' }}
             >
-              <Option value="option1" className='text-xl'>Option 1</Option>
-              <Option value="option2" className='text-xl'>Option 2</Option>
-              <Option value="option3" className='text-xl'>Option 3</Option>
+              <Option value="today" className='text-xl'>Today</Option>
+                <Option value="week" className='text-xl'>This Week</Option>
+                <Option value="month" className='text-xl'>This Month</Option>
+                <Option value="custom" className='text-xl'>Custom</Option>
             </Select>
           </div>
           <button className='bg-[#8C68CD] text-[#FDFDFD] w-28 ml-4 h-11 font-Lato text-sm rounded-lg'>Export</button>
@@ -161,7 +157,7 @@ function TimeSheet() {
         <div className='flex flex-row font-Lato mt-6 gap-4'>
           <div className='flex bg-white w-36 h-10 rounded-lg items-center justify-center gap-2'>
             <div className='bg-[#C39BD3] w-5 h-5 rounded-full'></div>
-            <span>Active Time</span>
+            <span>Productive Time</span>
           </div>
           <div className='flex bg-white w-32 h-10 rounded-lg items-center justify-center gap-2'>
             <div className='bg-[#85C1E9] w-5 h-5 rounded-full'></div>
@@ -203,7 +199,7 @@ function TimeSheet() {
                 <tr className="">
 
                   <td className="w-44 flex flex-row p-1">
-                    <img src={empl.img} alt="Employee" className="w-12 h-12" />
+                    <img src={empl.img} alt="Employee" className="w-12 h-12 rounded-full" />
                     <div className="flex flex-col ml-1">
                       <span>{empl.name}</span>
                       <span className='text-[#818586]'>{empl.designation}</span>

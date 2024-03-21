@@ -9,7 +9,7 @@ import { useNavigate, Routes, Route } from "react-router-dom";
 import {Layout,Menu, Spin, message } from 'antd';
 import Employee from './employee';
 import Customers from './Customers';
-import EmployeesTeam from './EmployeesTeam';
+import EmployeesTeam from './EmployeesDirectory';
 import TimeSheet from './TimeSheet';
 import Settings from './settings';
 import Reports from './reports'

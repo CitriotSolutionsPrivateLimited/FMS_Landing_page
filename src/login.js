@@ -23,7 +23,7 @@ function Login() {
   };
 
   const onFinish = (values) => {
-    if(values.username !== 'admin' || values.password !== '12345'){
+    if(values.username !== 'cafebliss2024' || values.password !== 'BeanBliss@123'){
       return message.error('Invalid username or password')
     }
     message.success('Login Successfully')

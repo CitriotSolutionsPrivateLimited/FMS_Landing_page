@@ -21,10 +21,10 @@ import loginLogo from '../images/loginLogo.png';
 import r1 from '../images/r1.png';
 import r2 from '../images/r2.png';
 import r3 from '../images/r3.png';
-import login1 from '../images/Animation 1.png'
-import login2 from '../images/Animation 2.png'
-import login3 from '../images/Animation 3.png'
-import login4 from '../images/Animation 4.png'
+import login1 from '../images/Animation 1.webp'
+import login2 from '../images/Animation 2.webp'
+import login3 from '../images/Animation 3.webp'
+import login4 from '../images/Animation 4.webp'
 import profile from '../images/Rectangle 1393.png'
 import dashboard from '../images/dashb.png'
 import setting from '../images/search.png'
@@ -63,6 +63,21 @@ import tse2 from '../images/tse2.png'
 import tse3 from '../images/tse3.png'
 import tse4 from '../images/tse4.png'
 import newLogo from '../images/Logo 4.png'
+import empl1 from '../images/empl1.avif'
+import empl2 from '../images/empl2.jpeg'
+import empl3 from '../images/empl3.jpeg'
+import empl4 from '../images/empl4.jpeg'
+import empl5 from '../images/empl5.jpeg'
+import empl6 from '../images/empl6.jpeg'
+import empl7 from '../images/empl7.jpeg'
+import empl8 from '../images/empl8.jpeg'
+import empl9 from '../images/empl9.jpeg'
+import rank4 from '../images/Frame 10.png'
+import rank5 from '../images/Frame 10 (1).png'
+import rest1 from '../images/Screenshot 2024-03-21 at 1.18.29 PM.png'
+import rest2 from '../images/Screenshot 2024-03-21 at 1.19.09 PM.png'
+
+
 
 
 export {
@@ -75,5 +90,5 @@ emp1,emp2,emp3, emp4,d2,
 tp1,tp2,tp3,tp4,tp5,
 g1,g2,g3,customer1, customer2, customer3, customer4,e1, e2,e3,e4,e5,e6, 
 ts1, timesheet1, timesheet2, timesheet3, timesheet4,
-tse1,tse2,tse3,tse4, newLogo
+tse1,tse2,tse3,tse4, newLogo, empl1, empl2, empl3, empl4, empl5, empl6, empl7, empl8, empl9, rank4, rank5, rest1, rest2,
 };

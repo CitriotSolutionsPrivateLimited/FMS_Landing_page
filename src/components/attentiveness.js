@@ -83,46 +83,20 @@ const handleCheckboxChange = (event) => {
 
   return (
     <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5">
-      <div className="flex items-center p-4 ">
+      <div className="flex items-center p-4 justify-between">
         <span className="mr-10 text-2xl font-Lato font-bold text-[#2D3436]">Attentiveness</span>
-        <div className="ml-20 ">
-          <Select 
-            defaultValue="Select Franchise"
-            style={{ width: 150, height:35, fontSize: '20px' }}
-            >
-            <Option value="option1" className='text-xs'>Option 1</Option>
-            <Option value="option2" className='text-xl'>Option 2</Option>
-            <Option value="option3" className='text-xl'>Option 3</Option>
-            </Select>
-        </div>
+       
         <div className="ml-7">
           <Select
             defaultValue="Select Employee"
             style={{ width: 150, height:35,  fontSize: '20px' }}
             >
-            <Option value="option1" style={{ fontSize: '16px' }}>Option 1</Option>
-            <Option value="option2">Option 2</Option>
-            <Option value="option3">Option 3</Option>
-            </Select>
-        </div>
-        <div className="ml-7">
-          <Select className='hover:border-[#8C68CD]'
-            defaultValue="Department"
-            style={{ width: 150, height:35, fontSize: '20px' }}
-            >
-            <Option value="option1">Option 1</Option>
-            <Option value="option2">Option 2</Option>
-            <Option value="option3">Option 3</Option>
-            </Select>
-        </div>
-        <div className="ml-7 ">
-          <Select 
-            defaultValue="Date and Time"
-            style={{ width: 150, height:35, fontSize: '20px' }}
-            >
-            <Option value="option1" className='text-xl'>Option 1</Option>
-            <Option value="option2" className='text-xl'>Option 2</Option>
-            <Option value="option3" className='text-xl'>Option 3</Option>
+            <Option value="Amrish Ilyas">Amrish Ilyas</Option>
+            <Option value="Avantas Ghosal">Avantas Ghosal</Option>
+            <Option value="Jayadev Mitali">Jayadev Mitali</Option>
+            <Option value="Vijai Sritharan"> Vijai Sritharan</Option>
+            <Option value="Barsati Sandipa">Barsati Sandipa</Option>
+            <Option value="Hardeep Suksma">Hardeep Suksma</Option>
             </Select>
         </div>
       </div>

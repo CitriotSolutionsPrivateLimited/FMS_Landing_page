@@ -1,5 +1,5 @@
 import React,{useState, useRef, useEffect} from 'react';
-import { g1, g2, g3, tp1, tp2, tp3, tp4, tp5 } from '../images/constants';
+import { g1, g2, g3, tp1, tp2, tp3, tp4, tp5, empl2, empl3, empl4, empl5,empl6,empl7, rank4, rank5, empl9 } from '../images/constants';
 import { Select } from 'antd';
 const { Option } = Select;
 
@@ -16,10 +16,11 @@ const Performers = () => {
   };
 
   const PerformersData = [
-    {img: tp4 ,name: 'Jayadev Mitali', designation: 'Designation', count: '203', work: '2021', rank: g2 },
-    {img: tp3 ,name: 'Jitendra Choudhary', designation: 'Designation', count: '200', work: '2020', rank: g3 },
-    {img: tp2 ,name: 'Avantas Ghosal', designation: 'Designation', count: '198', work: '2020', rank: 4 },
-    {img: tp1 ,name: 'Barsati Sandipa', designation: 'Designation', count: '180', work: '2020', rank: 5 },
+    {img: empl6 ,name: 'Hardeep Suksma', designation: 'Waiter', count: '203', work: '2021', rank: g2 },
+    {img: empl2 ,name: 'Avantas Ghosal', designation: 'Cashier', count: '198', work: '2020', rank: g3 },
+    {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', count: '200', work: '2020', rank: rank4 },
+    {img: empl7 ,name: 'Barsati Sandipa', designation: 'Chef', count: '180', work: '2020', rank: rank5 },
+
   ];
 
 
@@ -27,16 +28,7 @@ const Performers = () => {
     <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5" style={{width:'500px', height:'650px', overflowY:'auto'}}>
       <div className="flex items-center p-4 ">
         <span className="mr-10 text-2xl font-Lato font-bold text-[#2D3436]">Top Performers</span>
-        <div className="ml-24 ">
-          <Select 
-            defaultValue="This Week"
-            style={{ width: 150, height:35, fontSize: '20px' }}
-            >
-            <Option value="option1" className='text-xl'>Option 1</Option>
-            <Option value="option2" className='text-xl'>Option 2</Option>
-            <Option value="option3" className='text-xl'>Option 3</Option>
-            </Select>
-        </div>
+      
         
       </div>
 
@@ -44,7 +36,7 @@ const Performers = () => {
       {PerformersData.length > 0 ?
       <><div className="flex justify-center items-center flex-col">
           <div className="relative">
-            <img src={tp5} alt="User" className="w-36 h-36 rounded-full border-4 border-white" />
+            <img src={empl3} alt="User" className="w-36 h-36 rounded-full border-4 border-white" />
 
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-4 border-[#6F42C1]  rounded-full " />
 
@@ -66,8 +58,8 @@ const Performers = () => {
           </div>
 
           <div className='flex items-center justify-center flex-col mt-4 gap-1'>
-            <span className='text-[#6F42C1] font-Lato text-base'>Hardeep Suksma</span>
-            <span className='font-Lato text-sm'>Designation</span>
+            <span className='text-[#6F42C1] font-Lato text-base'>Jayadev Mitali</span>
+            <span className='font-Lato text-sm'>Chef</span>
             <span className='text-[#818586] text-xs font-Lato'>Working Since 2022</span>
             <div className='bg-[#D6EAF7] text-[#3498DB] w-24 h-7 flex items-center justify-center rounded-lg font-Lato text-xs'>212 Servings</div>
 

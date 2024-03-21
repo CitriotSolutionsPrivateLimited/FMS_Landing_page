@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Select, Modal } from 'antd';
 import { TbRulerMeasure, TbSearch} from "react-icons/tb";
-import { g1, g2, g3, tp1, tp2, tp3, tp4, tp5 } from '../images/constants';
+import { g1, g2, g3, tp1, tp2, tp3, tp4, tp5, empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9 } from '../images/constants';
 import ProgressBar from "@ramonak/react-progress-bar";
 import Pie from './charts/pie';
 import Line from './charts/Line';
@@ -13,11 +13,11 @@ import { GoArrowUp, GoArrowDown } from "react-icons/go";
 const { Option } = Select;
 
 const data = [
-  { id: "Active Time", value: 73 },
+  { id: "Productivity", value: 73 },
   { id: "Idle Time", value: 40 },
   { id: "Away Time", value: 20 },
   { id: "Store Exit", value: 30 },
-  { id: "Uniform Violation", value: 18 },
+  { id: "Compliance Violation", value: 18 },
   { id: "Phone Usage", value: 15 },
 
 ];
@@ -72,27 +72,33 @@ function Reports() {
 
 
   const PerformersData = [
-    {img: tp5 ,name: 'Hardeep Suksma', designation: 'Waiter', productivity:'89%', rank: g1 },
-    {img: tp4 ,name: 'Jayadev Mitali', designation: 'Cashier', productivity:'87%', rank: g2 },
-    {img: tp3 ,name: 'Jitendra Choudhary', designation: 'Waiter', productivity:'78%', rank: g3 },
-    {img: tp2 ,name: 'Avantas Ghosal', designation: 'Housekeeping', productivity:'76%', rank: 4 },
-    {img: tp1 ,name: 'Barsati Sandipa', designation: 'Housekeeping', productivity:'73%', rank: 5 },
+    {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', productivity:'89%', rank: g1 },
+    { img: empl2, name: 'Avantas Ghosal', designation: 'Cashier', productivity:'87%', rank: g2 },
+    { img: empl3, name: 'Jayadev Mitali', designation: 'Chef', productivity:'78%', rank: g3 },
+    { img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', productivity:'76%', rank: 4 },
+    { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', productivity:'73%', rank: 5 },
+    // { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', productivity:'73%', rank: 5 },
+
   ];
 
   const EPTableData = [
-    {img: tp5 ,name: 'Hardeep Suksma', designation: 'Waiter', productivity:'60', joiningDate: '26/11/23' },
-    {img: tp4 ,name: 'Jayadev Mitali', designation: 'Cashier', productivity:'70', joiningDate: '12/11/23' },
-    {img: tp3 ,name: 'Jitendra Choudhary', designation: 'Waiter', productivity:'50', joiningDate: '21/10/23' },
-    {img: tp2 ,name: 'Avantas Ghosal', designation: 'Housekeeping', productivity:'20', joiningDate: '19/11/23' },
-    {img: tp1 ,name: 'Barsati Sandipa', designation: 'Housekeeping', productivity:'80', joiningDate: '04/02/23' },
+    {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', productivity:'60', joiningDate: '26/11/23' },
+    { img: empl2, name: 'Avantas Ghosal', designation: 'Cashier', productivity:'70', joiningDate: '12/11/23' },
+    { img: empl3, name: 'Jayadev Mitali', designation: 'Chef', productivity:'50', joiningDate: '21/10/23' },
+    { img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', productivity:'20', joiningDate: '19/11/23' },
+    { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', productivity:'80', joiningDate: '04/02/23' },
+    { img: empl7, name: 'Barsati Sandipa', designation: 'Chef', productivity:'65', joiningDate: '04/02/23' },
+
   ];
 
   const EATableData = [
-    {img: tp5 ,name: 'Hardeep Suksma', designation: 'Waiter', score:'75', date: '26/11/23',  joiningDate: '26/11/23', count:'261', present: true },
-    {img: tp4 ,name: 'Jayadev Mitali', designation: 'Cashier', score:'85', date: '26/11/23', joiningDate: '12/11/23', count:'285', present: false },
-    {img: tp3 ,name: 'Jitendra Choudhary', designation: 'Waiter', score:'72', date: '26/11/23', joiningDate: '21/10/23', count:'258', present: true},
-    {img: tp2 ,name: 'Avantas Ghosal', designation: 'Housekeeping', score:'78', date: '26/11/23', joiningDate: '19/11/23',count:'272', present: true},
-    {img: tp1 ,name: 'Barsati Sandipa', designation: 'Housekeeping', score:'80', date: '26/11/23', joiningDate: '04/02/23', count:'282', present: false},
+    {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', score:'75', date: '26/11/23',  joiningDate: '26/11/23', count:'261', present: true },
+    { img: empl2, name: 'Avantas Ghosal', designation: 'Cashier', score:'85', date: '26/11/23', joiningDate: '12/11/23', count:'285', present: false },
+    { img: empl3, name: 'Jayadev Mitali', designation: 'Chef', score:'72', date: '26/11/23', joiningDate: '21/10/23', count:'258', present: true},
+    { img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', score:'78', date: '26/11/23', joiningDate: '19/11/23',count:'272', present: true},
+    { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', score:'80', date: '26/11/23', joiningDate: '04/02/23', count:'282', present: false},
+    { img: empl7, name: 'Barsati Sandipa', designation: 'Chef', score:'50', date: '26/11/23', joiningDate: '04/02/23', count:'282', present: false},
+
   ];
 
   const cardData = [
@@ -123,11 +129,15 @@ function Reports() {
       color: '#F79044',
       data: [
         { x: '8:00AM', y: 10 },
-        { x: '10:00AM', y: 6 },
+        { x: '9:00AM', y: 8 },
+        { x: '10:00AM', y: 12 },
+        { x: '11:00AM', y: 9 },
         { x: '12:00PM', y: 15 },
-        { x: '02:00PM', y: 10 },
-        { x: '04:00PM', y: 7 },
-        { x: '06:00PM', y: 11 },
+        { x: '01:00PM', y: 13 },
+        { x: '02:00PM', y: 16 },
+        { x: '03:00PM', y: 10 },
+        { x: '04:00PM', y: 11 },
+        { x: '06:00PM', y: 8 },
         { x: '08:00PM', y: 16 },
         { x: '10:00PM', y: 8 },
       ],
@@ -151,7 +161,31 @@ function Reports() {
 
       <div className='flex flex-row mt-10 gap-8 text-lg text-[#818586] '>
         <button onClick={()=>setSection('employees')} className={`${section === 'employees' ? 'text-[#6F42C1]' : ''}`}>Employees</button>
-        <button onClick={()=>setSection('customers')} className={`${section === 'customers' ? 'text-[#6F42C1]' : ''}`}>Customers</button>
+        <button onClick={()=>setSection('customers')} className={`${section === 'customers' ? 'text-[#6F42C1]' : ''} mr-44`}>Customers</button>
+        <div className="ml-44">
+                <Select
+                  defaultValue="Select Franchise"
+                  style={{ width: 150, height: 40, fontSize: '20px' }}
+                >
+                 <Option value="Indiranagar" className='text-xs'>Indiranagar</Option>
+                <Option value="Kormangala" className='text-xs'>Kormangala</Option>
+                <Option value="HSR Layout" className='text-xs'>HSR Layout</Option>
+                <Option value="Jayanagar" className='text-xs'>Jayanagar</Option>
+                <Option value="Electronic City" className='text-xs'>Electronic City</Option>
+                <Option value="all" className='text-xs'>All Franchise</Option>
+                </Select>
+              </div>
+              <div className=" ">
+                <Select
+                  defaultValue="Date and Time"
+                  style={{ width: 150, height: 40, fontSize: '20px' }}
+                >
+                 <Option value="today" className='text-xl'>Today</Option>
+                <Option value="week" className='text-xl'>This Week</Option>
+                <Option value="month" className='text-xl'>This Month</Option>
+                <Option value="custom" className='text-xl'>Custom</Option>
+                </Select>
+              </div>
       </div>
 
       { section === 'employees' && (
@@ -164,7 +198,7 @@ function Reports() {
             {PerformersData.map((dt, index) => (
               <div key={index} className="flex flex-col bg-white rounded-lg shadow-xl p-3  mt-4 h-32 w-56">
                 <div className='flex flex-row h-10'>
-                  <img src={dt.img} alt="" className='w-9 h-9' />
+                  <img src={dt.img} alt="" className='w-9 h-9 rounded-full' />
                   <div className='flex flex-col text-xs ml-1 w-28'>
                     <span>{dt.name}</span>
                     <span className='text-[#818586]'>{dt.designation}</span>
@@ -177,10 +211,10 @@ function Reports() {
             ))}
           </div>
         </div>
-        <div className="rounded-lg shadow-md  bg-white mt-14">
+        <div className=" justify-between rounded-lg shadow-md  bg-white mt-14">
             <div className="flex items-center p-4 ">
               <span className="mr-10 text-2xl font-Lato font-bold ">Employee Performance</span>
-              <div className={`flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
+              <div className={` flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
                 <TbSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2' />
                 <input
                   type="text"
@@ -191,27 +225,8 @@ function Reports() {
                   placeholder="Search Team Employees"
                   className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base" />
               </div>
-              <div className="ml-7">
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1">Option 1</Option>
-                  <Option value="option2">Option 2</Option>
-                  <Option value="option3">Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-7 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-7'>Export</button>
+              
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-36'>Export</button>
             </div>
             <div className='p-4'>
               <table className="w-full text-left table-auto p-4 font-Lato">
@@ -228,7 +243,7 @@ function Reports() {
                   {EPTableData.map((data, index) => (
                     <tr key={index} className=" hover:bg-gray-100">
                       <td className="flex flex-row p-2 whitespace-nowrap items-center">
-                        <img src={data.img} alt="" className='w-9 h-9' />
+                        <img src={data.img} alt="" className='w-9 h-9 rounded-full' />
                         <div className="text-[#2D3436] ml-2">{data.name}</div>
                       </td>
                       <td className="p-2 whitespace-nowrap ">
@@ -253,7 +268,7 @@ function Reports() {
           <div className="rounded-lg shadow-md  bg-white mt-14">
             <div className="flex items-center p-4 ">
               <span className="mr-10 text-2xl font-Lato font-bold ">Employee Attentiveness</span>
-              <div className={`flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
+              <div className={` flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
                 <TbSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2' />
                 <input
                   type="text"
@@ -264,27 +279,8 @@ function Reports() {
                   placeholder="Search Team Employees"
                   className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base" />
               </div>
-              <div className="ml-7">
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1">Option 1</Option>
-                  <Option value="option2">Option 2</Option>
-                  <Option value="option3">Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-7 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-7'>Export</button>
+              
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-36'>Export</button>
             </div>
             <div className='p-4'>
               <table className="w-full text-left table-auto p-4 font-Lato">
@@ -301,7 +297,7 @@ function Reports() {
                   {EATableData.map((data, index) => (
                     <tr key={index} className=" hover:bg-gray-100">
                       <td className="flex flex-row p-2 whitespace-nowrap items-center">
-                        <img src={data.img} alt="" className='w-9 h-9' />
+                        <img src={data.img} alt="" className='w-9 h-9 rounded-full' />
                         <div className="text-[#2D3436] ml-2">{data.name}</div>
                       </td>
                       <td className="p-2 whitespace-nowrap ">
@@ -324,7 +320,7 @@ function Reports() {
           </div><div className="rounded-lg shadow-md  bg-white mt-14">
             <div className="flex items-center p-4 ">
               <span className="mr-10 text-2xl font-Lato font-bold ">Employee Presence</span>
-              <div className={`flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
+              <div className={` flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
                 <TbSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2' />
                 <input
                   type="text"
@@ -333,29 +329,10 @@ function Reports() {
                   onFocus={handleInputFocus}
                   onBlur={handleInputBlur}
                   placeholder="Search Team Employees"
-                  className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base" />
+                  className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base " />
               </div>
-              <div className="ml-7">
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1">Option 1</Option>
-                  <Option value="option2">Option 2</Option>
-                  <Option value="option3">Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-7 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-7'>Export</button>
+              
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-48'>Export</button>
             </div>
             <div className='p-4'>
               <table className="w-full text-left table-auto p-4 font-Lato">
@@ -373,7 +350,7 @@ function Reports() {
                   {EATableData.map((data, index) => (
                     <tr key={index} className=" hover:bg-gray-100">
                       <td className="flex flex-row p-2 whitespace-nowrap items-center">
-                        <img src={data.img} alt="" className='w-9 h-9' />
+                        <img src={data.img} alt="" className='w-9 h-9 rounded-full' />
                         <div className="text-[#2D3436] ml-2">{data.name}</div>
                       </td>
                       <td className="p-2 whitespace-nowrap ">
@@ -433,7 +410,7 @@ function Reports() {
                   <div className='flex flex-row gap-6'>
                     <div className='flex flex-row w-32'>
                       <div className='rounded-full h-5 w-5 bg-[#C39BD3]'></div>
-                      <span className=' ml-3'>Active Time</span>
+                      <span className=' ml-3'> Productivity</span>
                     </div>
                     <div className='flex flex-row w-32'>
                       <div className='rounded-full h-5 w-5 bg-[#85C1E9]'></div>
@@ -449,7 +426,7 @@ function Reports() {
                     <div className='flex flex-row w-36'><div className='rounded-full h-5 w-5 bg-[#D7C17F]'></div>
                       <span className=' ml-3'>Store Exit</span></div>
                     <div className='flex flex-row w-40'><div className='rounded-full h-5 w-5 bg-[#FFC585]'></div>
-                      <span className=' ml-3'>Uniform Violation</span></div>
+                      <span className=' ml-3'>Compliance Violation</span></div>
                     <div className='flex flex-row w-32'><div className='rounded-full h-5 w-5 bg-[#C4C4C4]'></div>
                       <span className=' ml-3'>Phone Usage</span></div>
 
@@ -461,20 +438,15 @@ function Reports() {
           </Modal>
 
       {selectedEA &&  (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={handleClosePopup}>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <div className="flex items-center ">
+            <div className="flex items-center justify-between">
               <span className="mr-40 text-2xl font-Lato font-bold text-[#2D3436]">Employee Attentivenss</span>
-              <div className="ml-96 ">
-                <Select 
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height:35, fontSize: '20px' }}
-                  >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                  </Select>
-              </div>
+              <button onClick={handleClosePopup} className="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
             </div>
             <div className='flex flex-row items-center mt-12'>
               <img src={selectedEA.img} alt="Employee" className="w-20 h-20 rounded-full" />
@@ -513,28 +485,9 @@ function Reports() {
      {section === 'customers' && 
       <div className='flex-col mt-5'>
         <div className='flex flex-row items-center gap-2'>
-            <span className='text-xl'>Customers Performance Report</span>
-            <div className="ml-80">
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1">Option 1</Option>
-                  <Option value="option2">Option 2</Option>
-                  <Option value="option3">Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-7 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-7'>Export</button>
+            <span className='text-xl mr-80'>Customers Performance Report</span>
+
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-96'>Export</button>
           </div>
           <div className='flex flex-row  mt-10 gap-8'>
           {cardData.map((card) => (
@@ -597,29 +550,9 @@ function Reports() {
           </div>
           <div className="rounded-lg shadow-md  bg-white mt-14">
             <div className="flex items-center p-4 ">
-              <span className="mr-10 text-2xl font-Lato font-bold ">Customers In The Store</span>
+              <span className="mr-96 text-2xl font-Lato font-bold ">Customers In The Store</span>
              
-              <div className="ml-72">
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1">Option 1</Option>
-                  <Option value="option2">Option 2</Option>
-                  <Option value="option3">Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-7 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 40, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-7'>Export</button>
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-96'>Export</button>
             </div>
             <div className='p-4' style={{width:'1050px', height:'370px'}}>
               <Line data={lineData} customerGraph={true} CustomTooltip={CustomTooltipforCustomer}/>

@@ -8,6 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import RadialSeparators from './RedialSeparators';
 import GradientSVG from './GradientSVG';
 import { GoArrowUp, GoArrowDown, GoChevronRight, GoChevronLeft } from "react-icons/go";
+import Line from './charts/Line';
 
 
 const { Option } = Select;
@@ -16,6 +17,8 @@ const { Option } = Select;
 
 
 function Customers() {
+  const [selectedCard, setSelectedCard] = useState(null);
+
   const [customer, setCustomer] = useState('29');
   const [orders, setOrders] = useState('completed')
   const navigate = useNavigate();
@@ -28,40 +31,76 @@ function Customers() {
 
   ]
 
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedCard(null);
+  };
+
+  const data = [
+    {
+      id: 'timeToServe',
+      color: '#F79044',
+      data: [
+        { x: '8:00AM', y: 10 },
+        { x: '9:00AM', y: 8 },
+        { x: '10:00AM', y: 12 },
+        { x: '11:00AM', y: 9 },
+        { x: '12:00PM', y: 15 },
+        { x: '01:00PM', y: 13 },
+        { x: '02:00PM', y: 16 },
+        { x: '03:00PM', y: 10 },
+        { x: '04:00PM', y: 11 },
+        { x: '06:00PM', y: 8 },
+        { x: '08:00PM', y: 16 },
+        { x: '10:00PM', y: 8 },
+      ],
+    }
+  ];
+
+  const CustomTooltip = ({ point }) => {
+    return (
+        <div style={{ background: 'white', padding: '5px' }}>
+          <span>Customers Attended</span>
+            <div className='text-[#6F42C1]'>{ parseInt(point.data.yFormatted)}</div>
+            <div>{point.data.xFormatted}</div>
+        </div>
+    );
+};
+
   useEffect(() => {
     setCustomer(customersData[0].age)
   }, []);
 
   const idCSS = "hello";
 
-  const onChange = () => {
-    if(orders === 'completed'){
-      setOrders('abandoned')
-    } else {
-      setOrders('completed')
-    }
-  }
+
+
+  const cardData = [
+    { id: 1, title: 'Average Selection Time', icon: <TbHourglass size={35}/>, time:'2 Min 30 Sec'},
+    { id: 2, title: 'Average Time at Franchise', icon: <TbBuildingStore size={35}/>, time:'20 Min 12 Sec' },
+  ];
+
   return (
     <div className='p-8 '>
       <div className="flex-grow  ">
       <div className="flex  mt-24 items-center">
         <div className="text-[#818586] cursor-pointer font-Lato text-sm" onClick={() => navigate('/')}>Home</div>
         <div className="w-1 h-1  bg-[#8C68CD] rounded-full ml-2 mr-2"></div>
-        <span className='text-[#8C68CD] text-sm'>Customers</span>
-      </div>
-      </div>
-      <div className='flex w-full flex-row mt-6'>
-      <div className=" rounded-lg shadow-md overflow-hidden w-full bg-white p-4">
-        <div className="flex items-center ">
-          <span className="mr-48 text-2xl font-Lato font-bold text-[#2D3436]">Customers</span>
-          <div className="ml-80 ">
+        <span className='text-[#8C68CD] text-sm mr-44'>Customers</span>
+        <div className="ml-72 ">
             <Select
               defaultValue="Select Franchise"
               style={{ width: 150, height: 35, fontSize: '20px' }}
             >
-              <Option value="option1" className='text-xs'>Option 1</Option>
-              <Option value="option2" className='text-xl'>Option 2</Option>
-              <Option value="option3" className='text-xl'>Option 3</Option>
+              <Option value="Indiranagar" className='text-xs'>Indiranagar</Option>
+                <Option value="Kormangala" className='text-xs'>Kormangala</Option>
+                <Option value="HSR Layout" className='text-xs'>HSR Layout</Option>
+                <Option value="Jayanagar" className='text-xs'>Jayanagar</Option>
+                <Option value="Electronic City" className='text-xs'>Electronic City</Option>
+                <Option value="all" className='text-xs'>All Franchise</Option>
             </Select>
           </div>
           <div className="ml-7 ">
@@ -69,11 +108,19 @@ function Customers() {
               defaultValue="Date and Time"
               style={{ width: 150, height: 35, fontSize: '20px' }}
             >
-              <Option value="option1" className='text-xl'>Option 1</Option>
-              <Option value="option2" className='text-xl'>Option 2</Option>
-              <Option value="option3" className='text-xl'>Option 3</Option>
+              <Option value="today" className='text-xl'>Today</Option>
+                <Option value="week" className='text-xl'>This Week</Option>
+                <Option value="month" className='text-xl'>This Month</Option>
+                <Option value="custom" className='text-xl'>Custom</Option>
             </Select>
           </div>
+      </div>
+      </div>
+      <div className='flex w-full flex-row mt-6'>
+      <div className=" rounded-lg shadow-md overflow-hidden w-full bg-white p-4">
+        <div className="flex items-center ">
+          <span className="mr-48 text-2xl font-Lato font-bold text-[#2D3436]">Customers</span>
+          
         </div>
 
         {/* <div className='flex flex-row border border-grey rounded-2xl p-5 items-center mt-4 gap-8'>
@@ -87,24 +134,17 @@ function Customers() {
         </div> */}
 
         <div className='mt-7 flex flex-row gap-10 mb-4'>
-          <div className="bg-white rounded-2xl shadow-lg p-5 font-Lato " style={{width:'230px', height:'150px'} }>
+          {cardData.map((card) => 
+          <div key={card.id} className="bg-white rounded-2xl shadow-lg p-5 font-Lato " style={{width:'230px', height:'150px'} } onClick={() => handleCardClick(card)}>
             <div className="flex flex-col gap-2" >
               <div className="bg-[#E1D8F2] h-12 w-12 flex items-center justify-center rounded-lg text-[#6F42C1]">
-              < TbHourglass size={35}/>
+             {card.icon}
               </div>
-              <span className='text-base'>Average Selection Time</span>
-              <span className='text-[#6F42C1] text-xl'>2 Min 30 Sec</span>
+              <span className='text-base'>{card.title}</span>
+              <span className='text-[#6F42C1] text-xl'>{card.time}</span>
             </div>
           </div>
-          <div className="bg-white rounded-2xl shadow-lg p-5 font-Lato " style={{width:'230px', height:'150px'} }>
-            <div className="flex flex-col gap-2" >
-              <div className="bg-[#E1D8F2] h-12 w-12 flex items-center justify-center rounded-lg text-[#6F42C1]">
-              < TbBuildingStore size={35}/>
-              </div>
-              <span className='text-base'>Average Time at Franchise</span>
-              <span className='text-[#6F42C1] text-xl'>20 Min 12 Sec</span>
-            </div>
-          </div>
+          )}
           </div>
         
       </div>
@@ -114,28 +154,6 @@ function Customers() {
         <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5 p-3" style={{width:'520px', height:'630px', overflowY:'auto'}}>
           <div className="flex flex-col  p-4 gap-4">
             <span className=" text-2xl font-Lato font-bold text-[#2D3436]">Check Out Status</span>
-            <div className='flex flex-row'>
-              <div >
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 35, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xs'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-6 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 35, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-            </div>
               <div className='flex items-center justify-center font-Lato mt-5 ml-3'>
                 <div style={{ position: 'relative' }}>
                   <GradientSVG  type={orders}/>
@@ -165,15 +183,11 @@ function Customers() {
                 </div>
               </div>
 
-              <div className='flex flex-col items-center justify-center font-Lato gap-4 ' >
-                {orders === 'completed' ? <div className='flex flex-row items-center ml-12 mt-5'>
-                  <div className='bg-[#D6EAF7] text-[#3498DB] w-44 h-12 flex items-center justify-center rounded-xl font-semibold text-2xl' style={{width:'180px', height:'52px'}}>Completed</div>
-                  <GoChevronRight size={30} color='#6F42C1' className='bg-[#F8F9FA] rounded-full w-7 h-7 ml-5 cursor-pointer' onClick={onChange}/>
-                </div> :
-                <div className='flex flex-row items-center mt-5 mr-10'>
-                  <GoChevronLeft size={30} color='#6F42C1' className='bg-[#F8F9FA] rounded-full w-7 h-7 mr-4 cursor-pointer' onClick={onChange}/>
-                  <div className='bg-[#F0D7D3] text-[#B93A28] w-44 h-12 flex items-center justify-center rounded-xl font-semibold text-2xl' style={{width:'180px', height:'52px'}}>Abandoned</div>
-                </div> }
+              <div className='flex flex-col items-center justify-center font-Lato gap-3 ' >
+              <div className={` ${orders === 'completed' ? 'bg-[#D6EAF7] text-[#3498DB]' : 'text-[#AAADAE]'} w-44 h-12 flex items-center justify-center rounded-xl  text-2xl`} style={{width:'180px', height:'52px'}} onClick={()=>setOrders('completed')}>Completed</div>
+
+              <div className={` ${orders === 'abandoned' ? 'bg-[#F0D7D3] text-[#B93A28]' : 'text-[#AAADAE]'} w-44 h-12 flex items-center justify-center rounded-xl text-2xl`} style={{width:'180px', height:'52px'}} onClick={()=>setOrders('abandoned')}>Abandoned</div>
+
                   <span className='text-[#818586] text-xl font-semibold'>{orders === 'completed' ? 321 : 27} Orders in Total</span>
                   <div className='flex flex-row'>
                   <div className={` h-6 w-14 flex items-center justify-center rounded-md font-Lato  ${orders === 'completed' ? 'bg-[#D5E2DD] text-[#317159]' : 'bg-[#F0D7D3] text-[#B93A28]' } text-xs`}>
@@ -191,28 +205,7 @@ function Customers() {
         <div className=" rounded-lg shadow-md overflow-hidden bg-white mt-5 p-3 " style={{width:'530px', height:'630px', overflowY:'auto'}}>
           <div className="flex flex-col  p-4 gap-4">
             <span className=" text-2xl font-Lato font-bold text-[#2D3436]">Age Demographic</span>
-            <div className='flex flex-row'>
-              <div >
-                <Select
-                  defaultValue="Select Franchise"
-                  style={{ width: 150, height: 35, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xs'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-              <div className="ml-6 ">
-                <Select
-                  defaultValue="Date and Time"
-                  style={{ width: 150, height: 35, fontSize: '20px' }}
-                >
-                  <Option value="option1" className='text-xl'>Option 1</Option>
-                  <Option value="option2" className='text-xl'>Option 2</Option>
-                  <Option value="option3" className='text-xl'>Option 3</Option>
-                </Select>
-              </div>
-            </div>
+
 
             <div className="flex items-center justify-center font-Lato relative mt-20 mr-20">
               <div className="flex items-center justify-center h-52 w-52 rounded-full bg-[#3498DB]">
@@ -260,6 +253,37 @@ function Customers() {
         </div>
         
       </div>
+
+      {selectedCard &&  (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="flex items-center justify-between">
+              <span className="mr-10 text-2xl font-Lato font-bold text-[#2D3436]">{selectedCard.title}</span>
+              <button onClick={handleClosePopup} className="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+            </div>
+
+                <h2 className="text-lg  font-Lato mt-3  font-bold text-[#6F42C1]">{selectedCard.time}</h2>
+
+            <div className="flex ">
+              <div className={`mt-2 h-6 w-11 flex items-center justify-center rounded-md font-Lato  bg-[#D5E2DD] text-[#317159]'text-xs`}>
+                <GoArrowUp color='#317159'/> <span className='text-[#317159]'>08%</span>
+              </div>
+              <h2 className="text-xs  font-Lato text-[#818586] mt-3 ml-1">vs Last week</h2>
+            </div>
+            
+            <div className="mb-10 " style={{width:'1050px', height:'370px'}}>
+             <Line data={data} CustomTooltip={CustomTooltip} />
+            </div>
+
+
+          </div>
+        </div>
+      )}
       
     </div>
   )

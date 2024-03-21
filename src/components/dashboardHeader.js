@@ -68,7 +68,7 @@ function DashboardHeader() {
           
           <div className="flex flex-col ml-3">
             <span className="mr-2 text-[#818586] font-Lato text-lg">{getCurrentDateTime()}</span>
-            <span className='text-[#2D3436] font-Lato text-lg'>Steamy Brew Café, Bengaluru</span>
+            <span className='text-[#2D3436] font-Lato text-lg'>Bean Bliss Café, Bengaluru</span>
           </div>
         </div>
       </div>
