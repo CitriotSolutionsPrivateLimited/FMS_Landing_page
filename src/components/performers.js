@@ -1,5 +1,5 @@
-import React,{useState, useRef, useEffect} from 'react';
-import { g1, g2, g3, tp1, tp2, tp3, tp4, tp5, empl2, empl3, empl4, empl5,empl6,empl7, rank4, rank5, empl9 } from '../images/constants';
+import React,{useState} from 'react';
+import { g1, g2, g3, empl2, empl3, empl6,empl7, rank4, rank5, empl9 } from '../images/constants';
 import { Select } from 'antd';
 const { Option } = Select;
 
@@ -8,12 +8,9 @@ const { Option } = Select;
 const Performers = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
-  const [data, setData] = useState([])
 
   // Function to handle option change
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+
 
   const PerformersData = [
     {img: empl6 ,name: 'Hardeep Suksma', designation: 'Waiter', count: '203', work: '2021', rank: g2 },
@@ -61,7 +58,7 @@ const Performers = () => {
             <span className='text-[#6F42C1] font-Lato text-base'>Jayadev Mitali</span>
             <span className='font-Lato text-sm'>Chef</span>
             <span className='text-[#818586] text-xs font-Lato'>Working Since 2022</span>
-            <div className='bg-[#D6EAF7] text-[#3498DB] w-24 h-7 flex items-center justify-center rounded-lg font-Lato text-xs'>212 Servings</div>
+            <div className='bg-[#D6EAF7] text-[#3498DB] w-24 h-7 flex items-center justify-center rounded-lg font-Lato text-xs'>212 Points</div>
 
           </div>
         </div><div className="flex flex-col p-4 mt-5 ">
@@ -83,7 +80,7 @@ const Performers = () => {
                       </div>
                     </td>
                     <td className=" whitespace-nowrap font-Lato py-2">
-                      <div className='bg-[#D6EAF7] text-[#3498DB] w-24 h-7 flex items-center justify-center rounded-lg font-Lato text-xs'>{e.count} Servings</div>
+                      <div className='bg-[#D6EAF7] text-[#3498DB] w-24 h-7 flex items-center justify-center rounded-lg font-Lato text-xs'>{e.count} Points</div>
                     </td>
                     <td className="p-2 whitespace-nowrap font-Lato py-2">
                       <span className='text-[#818586] text-xs font-Lato ml-4'>Working Since {e.work}</span>

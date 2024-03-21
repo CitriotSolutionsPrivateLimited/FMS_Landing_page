@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import { d1, emp1, emp2, emp3, emp4 } from '../images/constants';
 import Sidebar from './sidebar';
 import DashboardHeader from './dashboardHeader';
 import Dashboard from './Dashboard';
@@ -7,7 +6,6 @@ import { useNavigate, Routes, Route } from "react-router-dom";
 
 
 import {Layout,Menu, Spin, message } from 'antd';
-import Employee from './employee';
 import Customers from './Customers';
 import EmployeesTeam from './EmployeesDirectory';
 import TimeSheet from './TimeSheet';

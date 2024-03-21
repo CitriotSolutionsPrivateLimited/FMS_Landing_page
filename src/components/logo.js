@@ -1,6 +1,6 @@
 import React from "react";
-import { logo, logoMobile } from "./constants";
-import { loginLogo, newLogo } from "../images/constants";
+import { logo } from "./constants";
+import {  newLogo } from "../images/constants";
 
 class Logo extends React.Component {
   render() {

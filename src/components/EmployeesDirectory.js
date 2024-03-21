@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { e1,e2,e3,e4,e5,e6,empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9 } from '../images/constants';
+import { empl2, empl3,  empl5,empl6,empl7, empl9 } from '../images/constants';
 import { useNavigate } from "react-router-dom";
 import { Select } from 'antd';
-import { RiDeleteBinLine } from "react-icons/ri";
 import {  IoSearch } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
@@ -42,7 +41,7 @@ function EmployeesTeam() {
   ]
 
   return (
-    <div className='p-8 w-full'>
+    <div className='p-8 w-full font-Lato'>
       <div className="flex-grow  ">
         <div className='flex flex-row font-Lato text-3xl mt-24'>
           <h1 className='flex text-[#6F42C1] mr-2'>6</h1>
@@ -82,17 +81,6 @@ function EmployeesTeam() {
                 <Option value="Jayanagar" className='text-xs'>Jayanagar</Option>
                 <Option value="Electronic City" className='text-xs'>Electronic City</Option>
                 <Option value="all" className='text-xs'>All Franchise</Option>
-            </Select>
-          </div>
-          <div className="ml-6 ">
-            <Select
-              defaultValue="Department"
-              style={{ width: 160, height: 40, fontSize: '20px' }}
-            >
-              <Option value="today" className='text-xl'>Today</Option>
-                <Option value="week" className='text-xl'>This Week</Option>
-                <Option value="month" className='text-xl'>This Month</Option>
-                <Option value="custom" className='text-xl'>Custom</Option>
             </Select>
           </div>
         </div>

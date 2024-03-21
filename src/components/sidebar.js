@@ -1,10 +1,6 @@
 import React, { useState,useEffect } from 'react';
-import { FiHome, FiSettings, FiUser } from 'react-icons/fi';
-import { FaSearchDollar } from "react-icons/fa";
-import { AiOutlineSearch } from 'react-icons/ai';
-import {  FiChevronLeft, FiChevronRight } from 'react-icons/fi'; 
+import {  FiSettings } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import { dashboard, setting} from '../images/constants';
 import { IoLogOutOutline } from "react-icons/io5";
 import { TbUsersGroup, TbReportAnalytics, TbChevronLeft, TbBriefcase, TbZoomQuestion } from "react-icons/tb";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
@@ -149,7 +145,7 @@ function Sidebar() {
           </Link>
         </li>
         <li className="p-4 text-[#B93A28]">
-          <Link to="/dashboard" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <IoLogOutOutline  size={23} className="mr-2"/>
             Logout
           </Link>

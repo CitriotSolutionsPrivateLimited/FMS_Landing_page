@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import { chandra, logo } from "./constants";
-import { loginLogo, newLogo } from "../images/constants";
+import { newLogo } from "../images/constants";
 import Logo from "./logo";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";

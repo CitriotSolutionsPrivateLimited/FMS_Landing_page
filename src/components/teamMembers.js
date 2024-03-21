@@ -1,7 +1,6 @@
-import React,{useState, useRef, useEffect} from 'react';
-import { emp1, emp2, emp3, emp4, empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9 } from '../images/constants';
+import React,{useState, useEffect} from 'react';
+import {  empl2, empl3, empl5,empl6,empl7, empl9 } from '../images/constants';
 import {  IoSearch } from "react-icons/io5";
-import { RiMenu2Fill } from "react-icons/ri";
 import { Menu, Dropdown, Button } from 'antd';
 import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
 import { TbClockRecord, TbCheck } from "react-icons/tb";
@@ -86,13 +85,13 @@ const TeamMembers = () => {
 
   return (
     // style={{width:'500px', maxHeight:'350px', overflowY:'auto'}}
-    <div className="flex flex-col md:p-3 bg-white rounded-lg lg:w-5/12 h-96 ml-4" style={{width:'470px', overflowY:'auto'}}>
+    <div className="flex flex-col md:p-3 bg-white rounded-lg w-1/2 h-96 ml-6" style={{overflowY:'auto'}}>
       <div className="flex items-center  mb-4">
         <div className="flex flex-col">
-          <span className="text-[#2D3436] font-Lato text-sm font-semibold">Team Members</span>
+          <span className="text-[#2D3436] font-Lato text-base font-semibold">Team Members</span>
           <span className=' text-[#818586] font-Lato text-xs'>{teamNumber > 0 ? `6 At Work` : 'No members added'}</span>
         </div>
-        <div className={`ml-2 flex items-center rounded-lg px-3 py-2 bg-[#F8F9FA] w-48 h-9 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'}`} >
+        <div className={`ml-8 flex items-center rounded-lg px-3 py-2 bg-[#F8F9FA] w-48 h-9 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'}`} >
           <IoSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={16} className='mr-2'/>
           <input
             type="text"
@@ -104,13 +103,13 @@ const TeamMembers = () => {
             className=" outline-none placeholder-[#B2B5B9] flex-grow text-black bg-[#F8F9FA] font-Lato text-xs"
           />
         </div>
-        <div className="flex items-center ml-1 text-sm text-[#8185] w-28">
+        <div className="flex items-center ml-10 text-sm text-[#8185] w-36">
           <Dropdown overlay={menu} trigger={['click']}  >
             <div className="flex items-center" style={{ cursor: 'pointer' }}>
               <PiTextAlignCenterLight color='#6F42C1' size={20}/>
             </div>
           </Dropdown>
-          <span className="ml-1 text-[#6F42C1] text-xs">{selectedOption}</span>
+          <span className="ml-1 text-[#6F42C1] text-sm">{selectedOption}</span>
         </div>
 
 
@@ -121,19 +120,19 @@ const TeamMembers = () => {
       <div className="flex-col items-center justify-between " >
         {/* style={{ width: '450px', height: '50px' }} */}
         {teamMembersData.map((member, index) => (
-          <><div  className='flex items-center relative lg:w-12/12 h-11'>
+          <><div  className='flex items-center relative lg:w-full h-11'>
             <div className='flex flex-col items-center w-16'>
               <div className={`w-5 h-5 border-4 ${memberDataVisibility[index] ? 'border-[#3498DB]' : 'border-[#8C68CD]'} rounded-full`} />
               <span className="text-[#818586] font-Lato text-xs mt-1">{member.time}</span>
             </div>
-            <div className={`flex flex-row ${memberDataVisibility[index] ? 'bg-[#3498DB]' : 'bg-[#8C68CD]'}  rounded-lg items-center ml-4 w-96 h-10`} >
+            <div className={`flex flex-row ${memberDataVisibility[index] ? 'bg-[#3498DB]' : 'bg-[#8C68CD]'}  rounded-lg items-center ml-4 w-10/12 h-10`} >
               <img src={member.img} className="flex w-12 h-12 rounded-full  -ml-2" />
               <span className='text-[#FDFDFD] ml-1 font-Lato w-32'>{member.name}</span>
-              <button className={`flex bg-white  ${memberDataVisibility[index] ? 'text-[#3498DB]' : 'text-[#8C68CD]'}  rounded-3xl h-7 w-24 items-center justify-center font-Lato  text-xs`}>{member.designation}</button>
+              <button className={`flex bg-white  ${memberDataVisibility[index] ? 'text-[#3498DB]' : 'text-[#8C68CD]'}  rounded-3xl h-7 w-28 items-center justify-center font-Lato  text-xs`}>{member.designation}</button>
               {memberDataVisibility[index] ? (
-                <HiChevronUp size={24} color="#fff" className="ml-16 cursor-pointer" onClick={() => toggleMemberDataVisibility(index)} />
+                <HiChevronUp size={24} color="#fff" className="ml-28 cursor-pointer" onClick={() => toggleMemberDataVisibility(index)} />
               ) : (
-                <HiChevronDown size={24} color="#fff" className="ml-16 cursor-pointer" onClick={() => toggleMemberDataVisibility(index)} />
+                <HiChevronDown size={24} color="#fff" className="ml-28 cursor-pointer" onClick={() => toggleMemberDataVisibility(index)} />
               )}
               <div>
                 {index !== teamMembersData.length - 1 && ( // Render line for all members except the last one

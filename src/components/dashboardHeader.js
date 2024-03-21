@@ -73,7 +73,7 @@ function DashboardHeader() {
         </div>
       </div>
       
-      <div className={`flex items-center rounded-2xl px-3 py-2 bg-[#F8F9FA] w-96 h-14 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'} font-maven `}>
+      <div className={`flex items-center rounded-2xl px-3 py-2 bg-[#F8F9FA] w-96 h-14 border ${isFocused ? 'border-[#6F42C1]' : 'border-gray-100'} font-inter `}>
         <FiSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={26} className='mr-2'/>
         <input
         type="text"
@@ -82,7 +82,7 @@ function DashboardHeader() {
         onChange={handleSearchChange}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        className="outline-none placeholder-[#B2B5B9] flex-grow text-black bg-[#F8F9FA]  text-base border-transparent  placeholder-light font-extralight "
+        className="outline-none placeholder-[#B2B5B9] flex-grow text-black bg-[#F8F9FA]  text-base border-transparent "
         style={{fontWeight: 100}}
       />
       </div>

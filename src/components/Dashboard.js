@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Row, Col, Input, Form, message, Empty } from "antd";
+import { Row, Col, Empty } from "antd";
 import WorkStatus from './workstatus';
-import OrderTable from './orderActivity';
 import Camera from './Camera';
 import { useNavigate } from "react-router-dom";
 import TeamMembers from './teamMembers';
 import Performers from './performers';
 import Attentiveness from './attentiveness';
-import { Select, DatePicker, TimePicker } from 'antd';
-import { TbKarate, TbFaceMask, TbMasksTheater, TbUsersGroup, TbFlame, TbLuggage, TbShoppingCartOff, TbBox, TbWalk, TbRuler2 } from "react-icons/tb";
+import { Select, DatePicker } from 'antd';
+import {  TbMasksTheater, TbUsersGroup, TbFlame, TbLuggage, TbShoppingCartOff, TbBox, TbWalk, TbRuler2 } from "react-icons/tb";
 import { rest1, rest2 } from '../images/constants';
 import { TbLivePhoto, TbDeviceCctv } from "react-icons/tb";
-import { GoArrowUp, GoArrowDown, GoChevronRight, GoChevronLeft } from "react-icons/go";
+import {  GoChevronRight, GoChevronLeft } from "react-icons/go";
 
 
 const { Option } = Select;
@@ -42,26 +41,23 @@ const popData2 = [
 
 function Dashboard() {
   const navigate = useNavigate();
-  const [showCustom, setShowCustom] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedId, setSelectedId] = useState(1)
   const [image, setImage] = useState(rest1);
   const [popData, setPopData] = useState([])
-
+  const [selectedOption, setSelectedOption] = useState("Date and Time");
 
   const handleSelectChange = (value) => {
-    if (value === 'custom') {
-      setShowCustom(true);
-    } else {
-      setShowCustom(false);
-    }
-  };
+    setSelectedOption(value);
+  }
+
+  const handleDatePickerChange = () => {
+
+  }
 
   const handleCardClick = (card) => {
       setSelectedCard(card);
       if(card.activity === 1){
-        console.log("🚀 ~ handleCardClick ~ card.activity:", card.activity)
-        
         setPopData(popData2)
       } else {
         setPopData(popData1)
@@ -80,6 +76,8 @@ function Dashboard() {
     setSelectedId(card.id)
   }
 
+  
+
 
   return (
 
@@ -89,7 +87,7 @@ function Dashboard() {
             <div className="text-[#818586] cursor-pointer font-Lato text-sm" onClick={()=>navigate('/')}>Home</div>
             <div className="w-1 h-1  bg-[#8C68CD] rounded-full ml-2 mr-2"></div>
             <span className='text-[#8C68CD] text-sm mr-52'>Dashboard</span>
-            <div className="ml-96 ">
+            <div className="ml-72 ">
               <Select 
                 defaultValue="Select Franchise"
                 style={{ width: 150, height:35, fontSize: '20px' }}
@@ -104,9 +102,10 @@ function Dashboard() {
                 </Select>
             </div>
             <div className="ml-3 ">
-              <Select 
+              <Select
                 defaultValue="Date and Time"
                 style={{ width: 150, height:35, fontSize: '20px' }}
+                value={selectedOption} 
                 onChange={handleSelectChange}
                 >
                 <Option value="today" className='text-xl'>Today</Option>
@@ -114,11 +113,21 @@ function Dashboard() {
                 <Option value="month" className='text-xl'>This Month</Option>
                 <Option value="custom" className='text-xl'>Custom</Option>
                 </Select>
+
+                
                
             </div>
+            {selectedOption === "custom" && (
+              <div className="ml-3 ">
+                <RangePicker 
+                style={{  height:35, fontSize: '20px' }}
+                showTime
+                onChange={handleDatePickerChange} />
+              </div>
+            )}
         </div>
        <Row  className="flex-row mt-3 ">
-        <Col className="md:flex-col md:p-5 rounded-lg flex flex-row  lg:w-1/2 h-96 bg-white" 
+        <Col className="md:flex-col md:p-5 rounded-lg flex flex-row  lg:w-5/12 h-96 bg-white" 
         >
           <div className="flex items-center ">
             <span className=" text-lg font-Lato font-bold text-[#B93A28]">Alerts and Critical Alerts</span>
@@ -188,11 +197,17 @@ function Dashboard() {
                     </div>
                   </div>
                   <div className='flex items-center'>
-                  {popData.length > 1 && <button className='bg-[#8C68CD] flex flex-row items-center w-20 h-9 rounded-lg text-white' onClick={()=> setImage(image === rest2 ? rest1 : rest2 )}>
-                      <span className='ml-3'>{image === rest2 ? 'Prev' : 'Next'} </span>
-                      <GoChevronRight size={24}/>
-                    </button>}
-                    <Input type="number" id="quantity" value={image === rest2 ? '2' : '1'} class="mr-2 ml-2 w-12 h-8 rounded-lg border border-[#8C68CD] focus:border-[#8C68CD] outline-none" /> 
+                  {popData.length > 1 && (
+                  <> {image !== rest1 && <button className='bg-[#8C68CD] flex flex-row items-center w-28 h-9 rounded-lg text-white mr-2' onClick={() => setImage(image === rest2 ? rest1 : rest2)}>
+                        <GoChevronLeft size={24} className='ml-2'/>
+                        <span className='mr-3'>Previous </span>
+
+                      </button>}
+                      <button className='bg-[#8C68CD] flex flex-row items-center w-20 h-9 rounded-lg text-white' onClick={() => setImage(image === rest1 ? rest2 : rest2)}>
+                          <span className='ml-3'>Next </span>
+                          <GoChevronRight size={24} />
+                        </button></>)}
+                    <input type="number" id="quantity" value={image === rest2 ? '2' : '1'} class="mr-2 ml-2 w-12 h-8 rounded-lg border border-[#8C68CD] focus:border-[#8C68CD] outline-none" /> 
                     <span>of {popData.length}</span>
 
                   </div>

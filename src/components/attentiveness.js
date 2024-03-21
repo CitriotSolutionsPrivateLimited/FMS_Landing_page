@@ -1,6 +1,5 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState} from 'react';
 import { Select } from 'antd';
-import { ResponsiveLine } from '@nivo/line'
 import Line from './charts/Line';
 
 const { Option } = Select;
@@ -8,18 +7,27 @@ const { Option } = Select;
 const Attentiveness = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
-  const [cardsData, setCardData] = useState([]);
 
   const [checkedItems, setCheckedItems] = useState({
     timeToServe: true,
     timeToBill: true,
     timeToDeliver: true
-});
+  });
 
-const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setCheckedItems({ ...checkedItems, [name]: checked });
+  const CustomTooltip = ({ point }) => {
+    return (
+        <div className='bg-white shadow-2xl p-3'>
+            <span>{point.serieId}</span>
+            <div className='text-[#6F42C1]'>{parseInt(point.data.yFormatted)} mins</div>
+            <div className='text-[#818586]'>{point.data.xFormatted}</div>
+        </div>
+    );
 };
+
+  const handleCheckboxChange = (event) => {
+      const { name, checked } = event.target;
+      setCheckedItems({ ...checkedItems, [name]: checked });
+  };
 
 
   // Function to handle option change
@@ -102,7 +110,7 @@ const handleCheckboxChange = (event) => {
       </div>
       
       <div className=" " style={{width:'1050px', height:'370px'}}>
-         <Line data={filteredData} Attentiveness={true} checkedItems={checkedItems} lineColors={lineColors}/>
+         <Line data={filteredData} Attentiveness={true} checkedItems={checkedItems} lineColors={lineColors} CustomTooltip={CustomTooltip}/>
         </div>
 
 

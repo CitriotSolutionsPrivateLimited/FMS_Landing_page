@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { customer1, customer2, customer3, customer4 } from '../images/constants';
 import { useNavigate } from "react-router-dom";
-import { Select } from 'antd';
+import { Select, DatePicker } from 'antd';
 import { TbHourglass, TbBuildingStore } from "react-icons/tb";
 import { CircularProgressbarWithChildren, buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -12,7 +11,7 @@ import Line from './charts/Line';
 
 
 const { Option } = Select;
-
+const { RangePicker } = DatePicker;
 
 
 
@@ -22,14 +21,16 @@ function Customers() {
   const [customer, setCustomer] = useState('29');
   const [orders, setOrders] = useState('completed')
   const navigate = useNavigate();
+  const [selectedOption, setSelectedOption] = useState("Date and Time");
 
-  const customersData = [
-    {img: customer1, age:29},
-    {img: customer2, age:30},
-    {img: customer3, age:31},
-    {img: customer4, age:32},
+  const handleSelectChange = (value) => {
+    setSelectedOption(value);
+  }
 
-  ]
+  const handleDatePickerChange = () => {
+
+  }
+
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -62,17 +63,14 @@ function Customers() {
 
   const CustomTooltip = ({ point }) => {
     return (
-        <div style={{ background: 'white', padding: '5px' }}>
-          <span>Customers Attended</span>
+        <div className='bg-white shadow-2xl p-3'>
+          <span>Customers In Franchise</span>
             <div className='text-[#6F42C1]'>{ parseInt(point.data.yFormatted)}</div>
-            <div>{point.data.xFormatted}</div>
+            <div className='text-[#818586]'>{point.data.xFormatted}</div>
         </div>
     );
 };
 
-  useEffect(() => {
-    setCustomer(customersData[0].age)
-  }, []);
 
   const idCSS = "hello";
 
@@ -104,9 +102,11 @@ function Customers() {
             </Select>
           </div>
           <div className="ml-7 ">
-            <Select
+            <Select 
               defaultValue="Date and Time"
               style={{ width: 150, height: 35, fontSize: '20px' }}
+              value={selectedOption} 
+              onChange={handleSelectChange}
             >
               <Option value="today" className='text-xl'>Today</Option>
                 <Option value="week" className='text-xl'>This Week</Option>
@@ -114,6 +114,14 @@ function Customers() {
                 <Option value="custom" className='text-xl'>Custom</Option>
             </Select>
           </div>
+          {selectedOption === "custom" && (
+              <div className="ml-3 ">
+                <RangePicker 
+                style={{  height:35, fontSize: '20px' }}
+                showTime
+                onChange={handleDatePickerChange} />
+              </div>
+            )}
       </div>
       </div>
       <div className='flex w-full flex-row mt-6'>
@@ -184,9 +192,9 @@ function Customers() {
               </div>
 
               <div className='flex flex-col items-center justify-center font-Lato gap-3 ' >
-              <div className={` ${orders === 'completed' ? 'bg-[#D6EAF7] text-[#3498DB]' : 'text-[#AAADAE]'} w-44 h-12 flex items-center justify-center rounded-xl  text-2xl`} style={{width:'180px', height:'52px'}} onClick={()=>setOrders('completed')}>Completed</div>
+              <div className={` ${orders === 'completed' ? 'bg-[#D6EAF7] text-[#3498DB]' : 'text-[#AAADAE]'} w-44 h-12 flex items-center justify-center rounded-xl  text-2xl cursor-pointer`} style={{width:'180px', height:'52px'}} onClick={()=>setOrders('completed')}>Completed</div>
 
-              <div className={` ${orders === 'abandoned' ? 'bg-[#F0D7D3] text-[#B93A28]' : 'text-[#AAADAE]'} w-44 h-12 flex items-center justify-center rounded-xl text-2xl`} style={{width:'180px', height:'52px'}} onClick={()=>setOrders('abandoned')}>Abandoned</div>
+              <div className={` ${orders === 'abandoned' ? 'bg-[#F0D7D3] text-[#B93A28]' : 'text-[#AAADAE]'} w-44 h-12 flex items-center justify-center rounded-xl text-2xl cursor-pointer`} style={{width:'180px', height:'52px'}} onClick={()=>setOrders('abandoned')}>Abandoned</div>
 
                   <span className='text-[#818586] text-xl font-semibold'>{orders === 'completed' ? 321 : 27} Orders in Total</span>
                   <div className='flex flex-row'>
@@ -277,7 +285,7 @@ function Customers() {
             </div>
             
             <div className="mb-10 " style={{width:'1050px', height:'370px'}}>
-             <Line data={data} CustomTooltip={CustomTooltip} />
+             <Line data={data} CustomTooltip={CustomTooltip} ylegend = {true}/>
             </div>
 
 

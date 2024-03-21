@@ -1,13 +1,8 @@
 import React,{useState, useEffect} from 'react';
-import { Select, Modal } from 'antd';
-import { TbActivity, TbClockStop, TbDoorExit, TbShirt, TbDeviceMobile, TbCup } from "react-icons/tb";
-import { GoArrowUp, GoArrowDown } from "react-icons/go";
-import Chart from 'chart.js/auto';
+import {  Modal } from 'antd';
 import { TbLivePhoto, TbDeviceCctv } from "react-icons/tb";
 
 const Camera = () => {
-
-  const [selectedOption, setSelectedOption] = useState('');
   const [cardsData, setCardData] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +33,7 @@ const Camera = () => {
         <span className="mr-10 text-2xl font-Lato font-bold text-[#2D3436]">Camera</span>
       </div>
       {/* style={{width:'1050px', height:'360px'}} */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 mb-10 ml-4 gap-2" >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 mb-10 ml-4 gap-4" >
         {cardData.map((card) => (
           <div key={card.id} className="bg-white rounded-lg shadow-md p-3 mr-4 mt-4" onClick={() => handleCardClick(card)}>
             <div className="flex items-center">

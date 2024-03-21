@@ -1,7 +1,7 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import { ResponsiveLine } from '@nivo/line'
 
-export default function Line({ data, CustomTooltip, Attentiveness = false, checkedItems, lineColors, customerGraph = false }) {
+export default function Line({ data, CustomTooltip, Attentiveness = false, checkedItems, lineColors, customerGraph = false, ylegend = false }) {
   if(!Attentiveness && !customerGraph) {
   return (
   <ResponsiveLine
@@ -32,7 +32,7 @@ export default function Line({ data, CustomTooltip, Attentiveness = false, check
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'Number of customers attended',
+        legend: ylegend ? 'Average Time of Customers in Mins' : 'Number of customers attended',
         legendOffset: -40,
         legendPosition: 'middle',
         truncateTickAt: 0
@@ -93,6 +93,8 @@ export default function Line({ data, CustomTooltip, Attentiveness = false, check
       pointLabelYOffset={-12}
       colors={Object.keys(checkedItems).filter((key) => checkedItems[key]).map((key) => lineColors[key])}
       useMesh={true}
+    tooltip={CustomTooltip}
+
     />)}
 
     if(customerGraph){

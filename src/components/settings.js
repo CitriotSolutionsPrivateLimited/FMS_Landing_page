@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Select, Switch } from 'antd';
-import { TbUserCircle, TbLockSquareRounded, TbEPassport, TbReceipt, TbPhotoPlus, TbHourglass, TbCashBanknote } from "react-icons/tb";
+import { TbUserCircle, TbLockSquareRounded, TbReceipt, TbCashBanknote } from "react-icons/tb";
 import { BsCloudUpload } from "react-icons/bs";
 import { CiImageOn } from "react-icons/ci";
 const { Option } = Select;
@@ -88,10 +88,16 @@ function Settings() {
       </div>
 
       { section === 'profile' && (<div className='flex flex-col bg-white w-full rounded-lg mt-10 p-5 font-Lato'>
-        <div className='flex flex-row items-center'>
+        <div className='flex flex-row items-center justify-between'>
+          <div>
+
           <span className='mr-60 text-xl'>Profile</span>
+          </div>
+          <div>
+
           <button className='border border-[#8C68CD] text-[#8C68CD] text-xs rounded-lg w-20 h-9 ml-96'>Cancel</button>
           <button className='bg-[#8C68CD] rounded-lg w-28 h-9 text-white text-xs ml-5'>Save Change</button>
+          </div>
         </div>
         <span className='text-[#818586] text-sm'>Update your personal details and Information </span>
         <span className='mt-10'>Your Profile  Picture</span>
@@ -112,7 +118,7 @@ function Settings() {
             )}
             <input
               type="file"
-              accept=".jpg, .png"
+              accept=".jpg, .png, .jpeg"
               className="hidden"
               onChange={handleFileChange}
             />
@@ -190,10 +196,16 @@ function Settings() {
       </div> )}
 
       { section === 'security' && (<div className='flex flex-col bg-white w-full rounded-lg mt-10 p-5 font-Lato'>
-        <div className='flex flex-row items-center'>
+        <div className='flex flex-row items-center justify-between'>
+          <div>
+
           <span className='mr-60 text-xl'>Security</span>
+          </div>
+          <div>
+
           <button className='border border-[#8C68CD] text-[#8C68CD] text-xs rounded-lg w-20 h-9 ml-96'>Cancel</button>
           <button className='bg-[#8C68CD] rounded-lg w-28 h-9 text-white text-xs ml-5'>Save Change</button>
+          </div>
         </div>
         <span className='text-[#818586] text-sm'>Update your password  </span>
         <span className='mt-10 text-xl font-bold'>Two Factor Authentication</span>

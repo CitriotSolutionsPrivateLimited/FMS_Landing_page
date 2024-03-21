@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9,timesheet1,timesheet2,timesheet3,timesheet4, } from '../images/constants';
+import React, {  useState, } from 'react';
+import { empl2, empl3, empl5,empl6,empl7, empl9, } from '../images/constants';
 import { useNavigate } from "react-router-dom";
-import { Select } from 'antd';
+import { Select, DatePicker } from 'antd';
 import {  IoSearch, IoChevronDownCircleOutline, IoChevronUpCircleOutline } from "react-icons/io5";
 
 
 const { Option } = Select;
-
+const { RangePicker } = DatePicker;
 
 const employeesData = [
   {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', checkIn:'9:00AM', CheckOut:'5:00PM', active:'6h:20 Min', productivity:'70%', 
@@ -34,7 +34,7 @@ const employeesData = [
     timing: [
       {activities:[
         {  range:'Phone Usage', status:'phone', duration:'20 Minutes'},
-        {  range:'Uniform Violation', status:'violation', duration:'5 Minutes'},
+        {  range:'Compliance Violation', status:'violation', duration:'5 Minutes'},
         ],
         startTime:'11:00am'}
     ]
@@ -80,6 +80,15 @@ function TimeSheet() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Date and Time");
+
+  const handleSelectChange = (value) => {
+    setSelectedOption(value);
+  }
+
+  const handleDatePickerChange = () => {
+
+  }
 
   const [memberDataVisibility, setMemberDataVisibility] = useState(Array(employeesData.length).fill(false));
 
@@ -145,6 +154,8 @@ function TimeSheet() {
             <Select
               defaultValue="Date and Time"
               style={{ width: 160, height: 40, fontSize: '20px' }}
+              value={selectedOption} 
+                onChange={handleSelectChange}
             >
               <Option value="today" className='text-xl'>Today</Option>
                 <Option value="week" className='text-xl'>This Week</Option>
@@ -152,7 +163,15 @@ function TimeSheet() {
                 <Option value="custom" className='text-xl'>Custom</Option>
             </Select>
           </div>
-          <button className='bg-[#8C68CD] text-[#FDFDFD] w-28 ml-4 h-11 font-Lato text-sm rounded-lg'>Export</button>
+          {selectedOption === "custom" && (
+              <div className="ml-3 ">
+                <RangePicker 
+                style={{  height:40, width: 210, fontSize: '20px' }}
+                showTime
+                onChange={handleDatePickerChange} />
+              </div>
+            )}
+          {/* <button className='bg-[#8C68CD] text-[#FDFDFD] w-28 ml-4 h-11 font-Lato text-sm rounded-lg'>Export</button> */}
         </div>
         <div className='flex flex-row font-Lato mt-6 gap-4'>
           <div className='flex bg-white w-36 h-10 rounded-lg items-center justify-center gap-2'>
@@ -171,12 +190,11 @@ function TimeSheet() {
             <div className='bg-[#D7C17F] w-5 h-5 rounded-full'></div>
             <span>Store Exit</span>
           </div>
-          <div className='flex bg-white w-44 h-10 rounded-lg items-center justify-center gap-2'>
+          <div className='flex bg-white w-52 h-10 rounded-lg items-center justify-center gap-2'>
             <div className='bg-[#FFC585] w-5 h-5 rounded-full'></div>
-            <span>Uniform Violation</span>
+            <span>Compliance Violation</span>
           </div>
           <div className='flex bg-white w-36 h-10 rounded-lg items-center justify-center gap-2'>
-            {/* <img src={ts1} className=' w-5 h-5 rounded-full' /> */}
             <div className='bg-[#AAADAE] w-5 h-5 rounded-full'></div>
             <span>Phone Usage</span>
           </div>

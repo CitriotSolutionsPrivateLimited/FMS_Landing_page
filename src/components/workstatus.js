@@ -49,22 +49,22 @@ const WorkStatus = () => {
 
   const CustomTooltip = ({ point }) => {
     return (
-        <div style={{ background: 'white', padding: '5px' }}>
+        <div className='bg-white shadow-2xl p-3'>
           <span>Customers Attended</span>
             <div className='text-[#6F42C1]'>{ parseInt(point.data.yFormatted)}</div>
-            <div>{point.data.xFormatted}</div>
+            <div className='text-[#818586]'>{point.data.xFormatted}</div>
         </div>
     );
 };
 
 
   const cardData = [
-    { id: 1, title: 'Productivity', icon: <TbActivity size={28}/>, percentage: '60%', time:'2h 30Min', arrow:<GoArrowUp />  , active: '15%', green: true},
-    { id: 2, title: 'Idle Time', icon: <TbClockStop size={28}/>, percentage: '15%', time:'30Min', arrow:<GoArrowDown />  , active: '15%', green: false },
-    { id: 3, title: 'Away', icon: <TbCup size={28}/>, percentage: '5%', time:'15Min', arrow:<GoArrowDown />  , active: '15%', green: false },
-    { id: 4, title: 'Store Exit', icon: <TbDoorExit size={28}/>, percentage: '10', time:'Times', arrow:<GoArrowDown />  , active: '15%', green: false },
-    { id: 5, title: 'Phone Usage', icon: <TbDeviceMobile size={28}/>, percentage: '10%', time:'15Min', arrow:<GoArrowUp />  , active: '15%', green: true },
-    { id: 6, title: 'Compliance Violation', icon: <TbShirt size={28}/>, percentage: 'Yes', time:'', arrow:<GoArrowUp />  , active: '15%', green: true },
+    { id: 1, title: 'Productivity', icon: <TbActivity size={28}/>, percentage: '60%', time:'2h 30Min', arrow:<GoArrowUp />  , active: '15%', green: true, data:[0, 1, 4, 5, 2, 8, 10, 9, 12]},
+    { id: 2, title: 'Idle Time', icon: <TbClockStop size={28}/>, percentage: '15%', time:'30Min', arrow:<GoArrowDown />  , active: '15%', green: false, data:[10, 8, 2, 5, 4, 1, 0 ] },
+    { id: 3, title: 'Away', icon: <TbCup size={28}/>, percentage: '5%', time:'15Min', arrow:<GoArrowDown />  , active: '15%', green: false, data:[11, 7, 8, 3, 6, 1, 0 ] },
+    { id: 4, title: 'Store Exit', icon: <TbDoorExit size={28}/>, percentage: '10', time:'Times', arrow:<GoArrowDown />  , active: '15%', green: false, data: [9, 8, 6, 5, 6, 1, 0 ] },
+    { id: 5, title: 'Phone Usage', icon: <TbDeviceMobile size={28}/>, percentage: '10%', time:'15Min', arrow:<GoArrowUp />  , active: '15%', green: true, data:[0, 2, 3, 6, 3, 7, 11, 8, 10] },
+    { id: 6, title: 'Compliance Violation', icon: <TbShirt size={28}/>, percentage: 'Yes', time:'', arrow:<GoArrowUp />  , active: '15%', green: true, data:[0, 1, 5, 6, 2, 8, 4, 9, 12] },
   ];
 
   return (
@@ -113,7 +113,7 @@ const WorkStatus = () => {
                           data: {
                             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                             datasets: [{
-                              data: card.green ? [0, 1, 4, 5, 2, 8, 10, 9, 12] : [10, 8, 2, 5, 4, 1, 0 ],
+                              data: card.data,
                               fill: true,
                               borderColor: card.green ? '#317159' : '#B93A28',
                               borderWidth: 1.5,

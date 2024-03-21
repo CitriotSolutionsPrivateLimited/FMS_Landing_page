@@ -1,8 +1,6 @@
 import React from "react";
 import "./hero.css";
 import { cards, mob1, mob2, mob3, mob4, chandra } from "./constants";
-
-import { Button } from "antd";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

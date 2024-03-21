@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, {  useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Select, Modal } from 'antd';
-import { TbRulerMeasure, TbSearch} from "react-icons/tb";
-import { g1, g2, g3, tp1, tp2, tp3, tp4, tp5, empl2, empl3, empl4, empl5,empl6,empl7, empl8, empl9 } from '../images/constants';
+import { Select, Modal, DatePicker } from 'antd';
+import {  TbSearch} from "react-icons/tb";
+import { g1, g2, g3, empl2, empl3, empl5,empl6,empl7, empl9, rank4, rank5, } from '../images/constants';
 import ProgressBar from "@ramonak/react-progress-bar";
 import Pie from './charts/pie';
 import Line from './charts/Line';
@@ -11,7 +11,7 @@ import Chart from 'chart.js/auto';
 import { GoArrowUp, GoArrowDown } from "react-icons/go";
 
 const { Option } = Select;
-
+const { RangePicker } = DatePicker;
 const data = [
   { id: "Productivity", value: 73 },
   { id: "Idle Time", value: 40 },
@@ -32,6 +32,15 @@ function Reports() {
   const [selectedEmployee, setSelectedEmployee] = useState(null); 
   const [isModalVisible, setIsModalVisible] = useState(false); 
   const [selectedEA, setSelectedEA] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("Date and Time");
+
+  const handleSelectChange = (value) => {
+    setSelectedOption(value);
+  }
+
+  const handleDatePickerChange = () => {
+
+  }
 
   const handleViewResult = (employee) => {
     setSelectedEmployee(employee); // Set selected employee details
@@ -52,10 +61,10 @@ function Reports() {
 
   const CustomTooltip = ({ point }) => {
     return (
-        <div style={{ background: 'white', padding: '5px' }}>
+        <div className='bg-white shadow-2xl p-3'>
           <span>Customers Attended</span>
             <div className='text-[#6F42C1]'>{ parseInt(point.data.yFormatted)}</div>
-            <div>{point.data.xFormatted}</div>
+            <div className='text-[#818586]'>{point.data.xFormatted}</div>
         </div>
     );
   };
@@ -75,8 +84,8 @@ function Reports() {
     {img: empl9 ,name: 'Amrish Ilyas', designation: 'Waiter', productivity:'89%', rank: g1 },
     { img: empl2, name: 'Avantas Ghosal', designation: 'Cashier', productivity:'87%', rank: g2 },
     { img: empl3, name: 'Jayadev Mitali', designation: 'Chef', productivity:'78%', rank: g3 },
-    { img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', productivity:'76%', rank: 4 },
-    { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', productivity:'73%', rank: 5 },
+    { img: empl5, name: 'Vijai Sritharan', designation: 'Assistant Manager', productivity:'76%', rank: rank4 },
+    { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', productivity:'73%', rank: rank5 },
     // { img: empl6, name: 'Hardeep Suksma', designation: 'Waiter', productivity:'73%', rank: 5 },
 
   ];
@@ -179,6 +188,8 @@ function Reports() {
                 <Select
                   defaultValue="Date and Time"
                   style={{ width: 150, height: 40, fontSize: '20px' }}
+                  value={selectedOption} 
+                onChange={handleSelectChange}
                 >
                  <Option value="today" className='text-xl'>Today</Option>
                 <Option value="week" className='text-xl'>This Week</Option>
@@ -186,6 +197,14 @@ function Reports() {
                 <Option value="custom" className='text-xl'>Custom</Option>
                 </Select>
               </div>
+              {selectedOption === "custom" && (
+              <div className=" ">
+                <RangePicker 
+                style={{  height:40, fontSize: '20px' }}
+                showTime
+                onChange={handleDatePickerChange} />
+              </div>
+            )}
       </div>
 
       { section === 'employees' && (
@@ -212,7 +231,8 @@ function Reports() {
           </div>
         </div>
         <div className=" justify-between rounded-lg shadow-md  bg-white mt-14">
-            <div className="flex items-center p-4 ">
+            <div className="flex items-center p-4 justify-between">
+              <div className='flex flex-row'>
               <span className="mr-10 text-2xl font-Lato font-bold ">Employee Performance</span>
               <div className={` flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
                 <TbSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2' />
@@ -225,8 +245,10 @@ function Reports() {
                   placeholder="Search Team Employees"
                   className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base" />
               </div>
-              
+              </div>
+              <div>
               <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-36'>Export</button>
+              </div>
             </div>
             <div className='p-4'>
               <table className="w-full text-left table-auto p-4 font-Lato">
@@ -268,7 +290,7 @@ function Reports() {
           <div className="rounded-lg shadow-md  bg-white mt-14">
             <div className="flex items-center p-4 ">
               <span className="mr-10 text-2xl font-Lato font-bold ">Employee Attentiveness</span>
-              <div className={` flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
+              <div className={` mr-8 flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
                 <TbSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2' />
                 <input
                   type="text"
@@ -280,7 +302,7 @@ function Reports() {
                   className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base" />
               </div>
               
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-36'>Export</button>
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-96'>Export</button>
             </div>
             <div className='p-4'>
               <table className="w-full text-left table-auto p-4 font-Lato">
@@ -320,7 +342,7 @@ function Reports() {
           </div><div className="rounded-lg shadow-md  bg-white mt-14">
             <div className="flex items-center p-4 ">
               <span className="mr-10 text-2xl font-Lato font-bold ">Employee Presence</span>
-              <div className={` flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
+              <div className={`mr-20 flex items-center rounded-xl px-3 py-2 bg-[#F8F9FA] w-60 h-11 border ${isFocused ? 'border-[#6F42C1]' : 'border-[#F8F9FA]'}`} style={{ width: '290px', height: '53px' }}>
                 <TbSearch color={isFocused ? '#6F42C1' : '#E1D8F2'} size={20} className='mr-2' />
                 <input
                   type="text"
@@ -332,7 +354,7 @@ function Reports() {
                   className=" outline-none placeholder-[#B2B5B9] flex-grow  bg-[#F8F9FA]  text-base " />
               </div>
               
-              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-48'>Export</button>
+              <button className='border border-[#8C68CD] w-28 h-11 rounded-lg text-[#8C68CD] ml-96'>Export</button>
             </div>
             <div className='p-4'>
               <table className="w-full text-left table-auto p-4 font-Lato">
@@ -383,16 +405,6 @@ function Reports() {
               <div className='font-Lato mt-8'>
                 <div className='flex flex-row items-center justify-between'>
                   <span className='text-xl'>Employee Result</span>
-                  <div className=" ">
-                    <Select
-                      defaultValue="Date and Time"
-                      style={{ width: 150, height: 35, fontSize: '20px' }}
-                    >
-                      <Option value="option1" className='text-xl'>Option 1</Option>
-                      <Option value="option2" className='text-xl'>Option 2</Option>
-                      <Option value="option3" className='text-xl'>Option 3</Option>
-                    </Select>
-                  </div>
 
                 </div>
                 <div className='flex flex-row items-center mt-12'>
