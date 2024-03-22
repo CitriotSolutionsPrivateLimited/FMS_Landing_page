@@ -22,7 +22,6 @@ function Sidebar() {
 
   }
 
-
   useEffect(() => {
     if (patha === '/Userhome/dashboard') {
       setActiveSection(`Dashboard`)
@@ -36,6 +35,8 @@ function Sidebar() {
       setActiveSection(`Settings`)
     } else if (patha === '/Userhome/Reports') {
       setActiveSection(`Reports`)
+    } else if (patha === '/Userhome/HelpAndSupport') {
+      setActiveSection(`Support`)
     } else {
       setActiveSection(`Dashboard`)
     }
@@ -138,11 +139,19 @@ function Sidebar() {
             </div>
           )}
         </li>
-        <li className="p-4 text-[#818586]">
-          <Link to="/Userhome/dashboard" className="flex items-center">
+        <li className="" onClick={() => setActiveSection('Support')}>
+          <Link to="/Userhome/HelpAndSupport" className={`p-4  flex items-center  ${activeSection === 'Support' ? 'h-11 w-40 rounded-xl text-white bg-[#6F42C1] font-Lato' :  'text-[#818586]'} `}>
           <TbZoomQuestion size={19} color='#AAADAE' className="mr-2" />
             Help & Support
           </Link>
+          {activeSection === 'Support' && (
+            <div className="flex items-center justify-center ">
+              <div className="flex bg-white h-11 w-11 rounded-full  items-center justify-center border-4 border-[#F8F9FA] 
+              -mr-52 -mt-11">
+              <TbChevronLeft color="#6F42C1" size={24} />
+              </div>
+            </div>
+          )}
         </li>
         <li className="p-4 text-[#B93A28]">
           <Link to="/" className="flex items-center">

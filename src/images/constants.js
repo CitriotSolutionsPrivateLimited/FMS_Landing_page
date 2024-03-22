@@ -38,9 +38,12 @@ import empl7 from '../images/empl7.jpeg'
 import empl9 from '../images/empl9.jpeg'
 import rank4 from '../images/Frame 10.png'
 import rank5 from '../images/Frame 10 (1).png'
-import rest1 from '../images/cafe1.png'
 import rest2 from '../images/cafe2.png'
 import loginLogo from '../images/logingif.gif'
+import phoneusage from '../images/cafee4.png'
+import rest3 from '../images/cafee2.png'
+import rest4 from '../images/cafee1.png'
+import rest1 from '../images/cafee3.png'
 
 
 
@@ -52,5 +55,5 @@ r1,r2,r3,
 login1,login2,login3,login4,
 profile,
 g1,g2,g3,
- newLogo, empl2, empl3, empl5, empl6, empl7, empl9, rank4, rank5, rest1, rest2, loginLogo
+ newLogo, empl2, empl3, empl5, empl6, empl7, empl9, rank4, rank5, rest1, rest2, loginLogo, phoneusage, rest3, rest4
 };

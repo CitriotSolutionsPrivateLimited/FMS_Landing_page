@@ -1,7 +1,7 @@
 import React, {  useState, } from 'react';
-import { empl2, empl3, empl5,empl6,empl7, empl9, } from '../images/constants';
+import { empl2, empl3, empl5,empl6,empl7, empl9,phoneusage } from '../images/constants';
 import { useNavigate } from "react-router-dom";
-import { Select, DatePicker } from 'antd';
+import { Select, DatePicker, Modal } from 'antd';
 import {  IoSearch, IoChevronDownCircleOutline, IoChevronUpCircleOutline } from "react-icons/io5";
 
 
@@ -81,6 +81,8 @@ function TimeSheet() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Date and Time");
+  const [phoneUsage, setPhoneUsage] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSelectChange = (value) => {
     setSelectedOption(value);
@@ -89,6 +91,17 @@ function TimeSheet() {
   const handleDatePickerChange = () => {
 
   }
+
+  const handleClick = (title) => {
+    if(title === 'Phone Usage'){
+      setPhoneUsage(true);
+      setIsModalOpen(true);
+    }
+  }
+
+  const handleModalCancel = () => {
+    setIsModalOpen(false); // Hide modal
+  };
 
   const [memberDataVisibility, setMemberDataVisibility] = useState(Array(employeesData.length).fill(false));
 
@@ -250,7 +263,8 @@ function TimeSheet() {
                       <span>{tg.startTime}</span>
                     </div>
                     {tg && tg.activities && tg.activities.map((e) => (
-                    <div className={`w-36 h-9 ${e.status === 'violation' ? 'text-[#A35600] bg-[#FFC585] border-[#A35600]': e.status === 'idle' ? 'text-[#005B98] bg-[#85C1E9] border-[#005B98]' : e.status === 'away' ? 'text-[#B93A28] bg-[#D5897E] border-[#B93A28]' : e.status === 'exit' ? 'text-[#684F00] bg-[#D7C17F] border-[#684F00]' : e.status === 'phone' ? 'text-[#2D3436] bg-[#AAADAE] border-[#2D3436]' : 'text-[#59007D] bg-[#C39BD3] border-[#59007D]'} flex flex-col  text-xs items-center justify-center rounded-lg border  mr-5 `}>
+                    <div className={`w-36 h-9 ${e.status === 'violation' ? 'text-[#A35600] bg-[#FFC585] border-[#A35600]': e.status === 'idle' ? 'text-[#005B98] bg-[#85C1E9] border-[#005B98]' : e.status === 'away' ? 'text-[#B93A28] bg-[#D5897E] border-[#B93A28]' : e.status === 'exit' ? 'text-[#684F00] bg-[#D7C17F] border-[#684F00]' : e.status === 'phone' ? 'text-[#2D3436] bg-[#AAADAE] border-[#2D3436]' : 'text-[#59007D] bg-[#C39BD3] border-[#59007D]'} flex flex-col  text-xs items-center justify-center rounded-lg border  mr-5 `}
+                    onClick={()=>handleClick(e.range)}>
                       <span>{e.range}</span>
                       <span>{e.duration}</span>
                     </div>
@@ -269,6 +283,22 @@ function TimeSheet() {
 
 
       </div>
+      <Modal
+        visible={isModalOpen}
+        onCancel={handleModalCancel}
+        footer={null}
+        className="w-full"
+        >
+        {phoneUsage && (
+          <div className='font-Lato mt-8'>
+            <span className='text-[#8C68CD] text-lg'>Phone Usage</span>
+            <div className='flex flex-row items-center mt-6'>
+              <img src={phoneusage} alt="asd" className='w-full h-60'/>
+              </div>
+            
+          </div>
+        )}
+        </Modal> 
 
 
     </div>

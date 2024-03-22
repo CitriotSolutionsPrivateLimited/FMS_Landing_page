@@ -10,7 +10,8 @@ import Customers from './Customers';
 import EmployeesTeam from './EmployeesDirectory';
 import TimeSheet from './TimeSheet';
 import Settings from './settings';
-import Reports from './reports'
+import Reports from './reports';
+import HelpSupport from './helpSupport';
 
 const { Content, Sider } = Layout;
 
@@ -44,6 +45,7 @@ function UserHome(path) {
 				<Route path="/Customers" element={<Customers />} />
 				<Route path="/Settings" element={<Settings />} />
 				<Route path="/Reports" element={<Reports />} />
+				<Route path="/HelpAndSupport" element={<HelpSupport/>}/>
 			</Routes>
 		</div>
 	</div>

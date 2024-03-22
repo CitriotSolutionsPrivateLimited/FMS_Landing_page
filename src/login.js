@@ -111,7 +111,7 @@ function Login() {
                     <Checkbox className="text-lg font-light" size="large">Remember me</Checkbox>
                   </Form.Item>
 
-                  <a className="text-[#B93A28] float-right text-lg" href="#forgot-password">Forgot password?</a>
+                  <a className="text-[#B93A28] hover:text-[#b93a28] float-right text-lg" href="#forgot-password">Forgot password?</a>
                 </Form.Item>
 
                 <Form.Item>

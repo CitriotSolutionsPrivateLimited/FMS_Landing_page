@@ -8,7 +8,7 @@ import Performers from './performers';
 import Attentiveness from './attentiveness';
 import { Select, DatePicker } from 'antd';
 import {  TbMasksTheater, TbUsersGroup, TbFlame, TbLuggage, TbShoppingCartOff, TbBox, TbWalk, TbRuler2 } from "react-icons/tb";
-import { rest1, rest2 } from '../images/constants';
+import { rest3, rest4, rest1 } from '../images/constants';
 import { TbLivePhoto, TbDeviceCctv } from "react-icons/tb";
 import {  GoChevronRight, GoChevronLeft } from "react-icons/go";
 
@@ -30,8 +30,8 @@ const cardData = [
 ];
 
 const popData1 = [
-  {id:1, time:'12:10pm Sat 14,2024', img: rest1},
-  {id:2, time:'12:45pm Sat 14,2024', img: rest2}
+  {id:1, time:'12:10pm Sat 14,2024', img: rest3},
+  {id:2, time:'12:45pm Sat 14,2024', img: rest4}
 ]
 
 const popData2 = [
@@ -43,7 +43,7 @@ function Dashboard() {
   const navigate = useNavigate();
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedId, setSelectedId] = useState(1)
-  const [image, setImage] = useState(rest1);
+  const [image, setImage] = useState(rest3);
   const [popData, setPopData] = useState([])
   const [selectedOption, setSelectedOption] = useState("Date and Time");
 
@@ -67,12 +67,12 @@ function Dashboard() {
 
   const handleClosePopup = () => {
     setSelectedCard(null);
-    setImage(rest1);
+    setImage(rest3);
     setSelectedId(1);
   };
 
-  const handleSideCardClick = (card, image, rest1, rest2) => {
-    setImage(image === rest2 ? rest1 : rest2 )
+  const handleSideCardClick = (card, image, rest3, rest4) => {
+    setImage(image === rest4 ? rest3 : rest4 )
     setSelectedId(card.id)
   }
 
@@ -182,7 +182,7 @@ function Dashboard() {
                   <TbDeviceCctv size={22} className='ml-1' />
                 </div>
                 <div className=' mt-3'>
-                  <img src={image} alt="" className='w-full h-72'/>
+                { popData.length > 1 ? <img src={image} alt="" className='w-full h-72'/> : <img src={rest1} alt="" className='w-full h-72'/>}
 
                 </div>
                 <div className='flex mt-3 font-Lato justify-between'>
@@ -198,26 +198,24 @@ function Dashboard() {
                   </div>
                   <div className='flex items-center'>
                   {popData.length > 1 && (
-                  <> {image !== rest1 && <button className='bg-[#8C68CD] flex flex-row items-center w-28 h-9 rounded-lg text-white mr-2' onClick={() => setImage(image === rest2 ? rest1 : rest2)}>
+                  <> {image !== rest3 && <button className='bg-[#8C68CD] flex flex-row items-center w-28 h-9 rounded-lg text-white mr-2' onClick={() => setImage(image === rest4 ? rest3 : rest4)}>
                         <GoChevronLeft size={24} className='ml-2'/>
                         <span className='mr-3'>Previous </span>
 
                       </button>}
-                      <button className='bg-[#8C68CD] flex flex-row items-center w-20 h-9 rounded-lg text-white' onClick={() => setImage(image === rest1 ? rest2 : rest2)}>
+                      <button className='bg-[#8C68CD] flex flex-row items-center w-20 h-9 rounded-lg text-white' onClick={() => setImage(image === rest3 ? rest4 : rest4)}>
                           <span className='ml-3'>Next </span>
                           <GoChevronRight size={24} />
                         </button></>)}
-                    <input type="number" id="quantity" value={image === rest2 ? '2' : '1'} class="mr-2 ml-2 w-12 h-8 rounded-lg border border-[#8C68CD] focus:border-[#8C68CD] outline-none" /> 
+                    <input type="number" id="quantity" value={image === rest4 ? '2' : '1'} class="mr-2 ml-2 w-12 h-8 rounded-lg border border-[#8C68CD] focus:border-[#8C68CD] outline-none" /> 
                     <span>of {popData.length}</span>
 
                   </div>
                 </div>
-
-
               </div>
               <div className='flex flex-col ml-4'>
                 {popData.map((card) => (
-                <div key={card.id} className={`flex flex-row ${selectedId === card.id ? 'bg-[#EFEFF0]' : '' } h-28 rounded-lg items-center p-3 cursor-pointer mb-2`} onClick={()=>handleSideCardClick(card, image, rest1, rest2)}>
+                <div key={card.id} className={`flex flex-row ${selectedId === card.id ? 'bg-[#EFEFF0]' : '' } h-28 rounded-lg items-center p-3 cursor-pointer mb-2`} onClick={()=>handleSideCardClick(card, image, rest3, rest4)}>
                   <div className='flex flex-col'>
                     <span className='text-[#BD992A]'>{selectedCard.title} {card.id}</span>
                     <span>Camera 1</span>
