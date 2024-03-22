@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Row, Col, Input, Button, Form, Checkbox, message } from "antd";
-import { newLogo, login1, login2, login3, login4 } from "./images/constants";
+import { newLogo, login1, login2, login3, login4, loginLogo } from "./images/constants";
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { TbEyeCheck } from "react-icons/tb";
 import MultiStepForm from './register'
@@ -44,7 +44,9 @@ function Login() {
       <Row justify="space-around" align="top" className=" sm:mx-5 sm:my-7 md:my-6 lg:my-0 lg:flex-row  lg:columns-2 ">
 
         <Col className=" lg:w-1/2  lg:mx-10  md:my-12 sm:w-0 ">
-          <img src={images[currentImageIndex]} className="md:w-5/6 lg:h-full " />
+        <img src={loginLogo} className="md:w-5/6 lg:h-full" alt="GIF" />
+
+          {/* <img src={images[currentImageIndex]} className="md:w-5/6 lg:h-full " /> */}
         </Col>
         {/* login form */}
         <Col className="lg:w-2/5 ">
@@ -135,11 +137,6 @@ function Login() {
 }
 
 export default Login;
-
-
-
-
-
 
 
 

@@ -40,6 +40,7 @@ import rank4 from '../images/Frame 10.png'
 import rank5 from '../images/Frame 10 (1).png'
 import rest1 from '../images/cafe1.png'
 import rest2 from '../images/cafe2.png'
+import loginLogo from '../images/logingif.gif'
 
 
 
@@ -51,5 +52,5 @@ r1,r2,r3,
 login1,login2,login3,login4,
 profile,
 g1,g2,g3,
- newLogo, empl2, empl3, empl5, empl6, empl7, empl9, rank4, rank5, rest1, rest2,
+ newLogo, empl2, empl3, empl5, empl6, empl7, empl9, rank4, rank5, rest1, rest2, loginLogo
 };
